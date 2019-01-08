@@ -4,7 +4,42 @@
     <TargetFramework>netstandard2.0</TargetFramework>
   </PropertyGroup>
   <ItemGroup>
-    <Compile Include="Library.fs" />
+    <Compile Include="Common.fs" />
+    <Compile Include="Icon.fs" />
+    <Compile Include="Breadcrumbs.fs" />
+    <Compile Include="Button.fs" />
+    <Compile Include="ButtonGroup.fs" />
+    <Compile Include="CallOut.fs" />
+    <Compile Include="Card.fs" />
+    <Compile Include="Collapse.fs" />
+    <Compile Include="Divider.fs" />
+    <Compile Include="EditableText.fs" />
+    <Compile Include="HtmlElements.fs" />
+    <Compile Include="HTMLTable.fs" />
+    <Compile Include="HotKeys.fs" />
+    <Compile Include="Menu.fs" />
+    <Compile Include="Navbar.fs" />
+    <Compile Include="NonIdealState.fs" />
+    <Compile Include="OverflowList.fs" />
+    <Compile Include="PanelStack.fs" />
+    <Compile Include="ProgressBar.fs" />
+    <Compile Include="ResizeSensor.fs" />
+    <Compile Include="Spinner.fs" />
+    <Compile Include="Tabs.fs" />
+    <Compile Include="Tag.fs" />
+    <Compile Include="Text.fs" />
+    <Compile Include="Tree.fs" />
+    <Compile Include="FormControl/FormGroup.fs" />
+    <Compile Include="FormControl/ControlGroup.fs" />
+    <Compile Include="FormControl/Label.fs" />
+    <Compile Include="FormControl/Checkbox.fs" />
+    <Compile Include="FormControl/Radio.fs" />
+    <Compile Include="FormControl/HTMLSelect.fs" />
+    <Compile Include="FormControl/Slider.fs" />
+    <Compile Include="FormControl/Switch.fs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Fable.BluePrint.Icons\Fable.BluePrint.Icons.fsproj" />
   </ItemGroup>
   <Import Project="..\..\.paket\Paket.Restore.targets" />
 </Project>

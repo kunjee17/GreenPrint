@@ -1,0 +1,1 @@
+namespace Fable.Blueprint.Core
