@@ -51,7 +51,7 @@ let nestedDeleteStyleInteractive () =
 let list () =
     Tag.list [ Tag.List.HasAddons ]
         [ Tag.tag [ Tag.Color IsDanger ]
-            [ str "Maxime Mangel" ]
+            [ str "Kunjan Dalal" ]
           Tag.delete [ ] [ ] ]
 
 let view =
