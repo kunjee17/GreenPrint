@@ -39,5 +39,5 @@ These rules should work for most of the open statements, however please note `op
 
 ### Any issues ?
 
-If you have any issues porting your project please [open an issue](https://github.com/MangelMaxime/Fulma/issues) so we can help you and prevent other users to be alone with it :).
+If you have any issues porting your project please [open an issue](https://github.com/kunjee17/GreenPrint/issues) so we can help you and prevent other users to be alone with it :).
        """
