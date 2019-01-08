@@ -1,4 +1,4 @@
-# Fulma : contributing to the project
+# GreenPrint : contributing to the project
 
 ## Foreword
 Hi there, we're happy you deciced to join the band so as to make this project even better!
