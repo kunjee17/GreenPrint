@@ -1,3 +1,3 @@
 ### 0.1.0-alpha-1
 
-* Start project
+* Start project - Coming Soon
