@@ -170,9 +170,5 @@ Target.create "PublishDocs" (fun _ ->
 "Build" ==> "YarnInstall" ==> "InstallDocs" ==> "WatchDocs"
 "Build" ==> "YarnInstall" ==> "InstallDocs" ==> "BuildDocs" ==> "PublishDocs"
 
-//Wrapper to publish everything
-Target.create "Publish" (ignore)
-
-"Publish" ==> "PublishDocs" ==> "PublishNugets"
 // start build
 Target.runOrDefault "Build"

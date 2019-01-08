@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <Project Sdk="Microsoft.NET.Sdk">
 <PropertyGroup>
     <Description>Wrapper for BluePrint.Table for Fable Elmish</Description>
@@ -8,7 +8,7 @@
     <RepositoryUrl>https://github.com/kunjee17/GreenPrint</RepositoryUrl>
     <PackageTags>fable;elm;fsharp;blueprint;blueprintjs;blueprint.table</PackageTags>
     <Authors>Kunjan Dalal</Authors>
-    <Version>0.1.0-alpha-1</Version>
+    <Version>0.1.0</Version>
   </PropertyGroup>
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
