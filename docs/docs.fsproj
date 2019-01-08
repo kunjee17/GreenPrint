@@ -1,0 +1,92 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+  </PropertyGroup>
+  <ItemGroup>
+    <ProjectReference Include="../src/Fable.FontAwesome/Fable.FontAwesome.fsproj" />
+    <ProjectReference Include="../src/Fable.FontAwesome.Free/Fable.FontAwesome.Free.fsproj" />
+    <ProjectReference Include="../src/Fulma/Fulma.fsproj" />
+    <ProjectReference Include="../src/Fulma.Extensions.Wikiki.Checkradio/Fulma.Extensions.Wikiki.Checkradio.fsproj" />
+    <ProjectReference Include="../src/Fulma.Extensions.Wikiki.Divider/Fulma.Extensions.Wikiki.Divider.fsproj" />
+    <ProjectReference Include="../src/Fulma.Extensions.Wikiki.PageLoader/Fulma.Extensions.Wikiki.PageLoader.fsproj" />
+    <ProjectReference Include="../src/Fulma.Extensions.Wikiki.Quickview/Fulma.Extensions.Wikiki.Quickview.fsproj" />
+    <ProjectReference Include="../src/Fulma.Extensions.Wikiki.Slider/Fulma.Extensions.Wikiki.Slider.fsproj" />
+    <ProjectReference Include="../src/Fulma.Extensions.Wikiki.Switch/Fulma.Extensions.Wikiki.Switch.fsproj" />
+    <ProjectReference Include="../src/Fulma.Extensions.Wikiki.Tooltip/Fulma.Extensions.Wikiki.Tooltip.fsproj" />
+    <ProjectReference Include="../src/Fulma.Elmish/Fulma.Elmish.fsproj" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="src/Libs/Fable.Import.Marked.fs" />
+    <Compile Include="src/Libs/Fable.Import.PrismJS.fs" />
+    <Compile Include="src/Global/Router.fs" />
+    <Compile Include="src/Global/Render.fs" />
+    <Compile Include="src/Widgets/MdViewer.fs" />
+    <Compile Include="src/Widgets/Menu.fs" />
+    <Compile Include="src/Widgets/Showcase.fs" />
+    <!-- Layouts -->
+    <Compile Include="src/Fulma/Layout/Columns.fs" />
+    <Compile Include="src/Fulma/Layout/Container.fs" />
+    <Compile Include="src/Fulma/Layout/Footer.fs" />
+    <Compile Include="src/Fulma/Layout/Hero.fs" />
+    <Compile Include="src/Fulma/Layout/Level.fs" />
+    <Compile Include="src/Fulma/Layout/Section.fs" />
+    <Compile Include="src/Fulma/Layout/Tile.fs" />
+    <!-- Components -->
+    <Compile Include="src/Fulma/Components/Breadcrumb.fs" />
+    <Compile Include="src/Fulma/Components/Card.fs" />
+    <Compile Include="src/Fulma/Components/Dropdown.fs" />
+    <Compile Include="src/Fulma/Components/Media.fs" />
+    <Compile Include="src/Fulma/Components/Menu.fs" />
+    <Compile Include="src/Fulma/Components/Message.fs" />
+    <Compile Include="src/Fulma/Components/Modal.fs" />
+    <Compile Include="src/Fulma/Components/Navbar.fs" />
+    <Compile Include="src/Fulma/Components/Pagination.fs" />
+    <Compile Include="src/Fulma/Components/Panel.fs" />
+    <Compile Include="src/Fulma/Components/Tabs.fs" />
+    <!-- Elements -->
+    <Compile Include="src/Fulma/Elements/Box.fs" />
+    <Compile Include="src/Fulma/Elements/Button.fs" />
+    <Compile Include="src/Fulma/Elements/Content.fs" />
+    <Compile Include="src/Fulma/Elements/Delete.fs" />
+    <Compile Include="src/Fulma/Elements/Form.fs" />
+    <Compile Include="src/Fulma/Elements/Icon.fs" />
+    <Compile Include="src/Fulma/Elements/Image.fs" />
+    <Compile Include="src/Fulma/Elements/Notification.fs" />
+    <Compile Include="src/Fulma/Elements/Progress.fs" />
+    <Compile Include="src/Fulma/Elements/Table.fs" />
+    <Compile Include="src/Fulma/Elements/Tag.fs" />
+    <Compile Include="src/Fulma/Elements/Title.fs" />
+    <Compile Include="src/Fulma/Modifiers/Basics.fs" />
+    <Compile Include="src/Fulma/Modifiers/Colors.fs" />
+    <Compile Include="src/Fulma/Modifiers/Responsive.fs" />
+    <Compile Include="src/Fulma/Modifiers/Typography.fs" />
+    <Compile Include="src/Fulma/Versions.fs" />
+    <Compile Include="src/Fulma/Introduction.fs" />
+    <Compile Include="src/Fulma/Router.fs" />
+    <!-- FulmaExtensions -->
+    <Compile Include="src/FulmaExtensions/Calendar.fs" />
+    <Compile Include="src/FulmaExtensions/Checkradio.fs" />
+    <Compile Include="src/FulmaExtensions/Divider.fs" />
+    <Compile Include="src/FulmaExtensions/PageLoader.fs" />
+    <Compile Include="src/FulmaExtensions/Slider.fs" />
+    <Compile Include="src/FulmaExtensions/Switch.fs" />
+    <Compile Include="src/FulmaExtensions/Tooltip.fs" />
+    <Compile Include="src/FulmaExtensions/Quickview.fs" />
+    <Compile Include="src/FulmaExtensions/Router.fs" />
+    <!-- FulmaElmish -->
+    <Compile Include="src/FulmaElmish/DatePicker.fs" />
+    <Compile Include="src/FulmaElmish/Introduction.fs" />
+    <Compile Include="src/FulmaElmish/Router.fs" />
+    <!-- FableFontAwesome -->
+    <Compile Include="src/FableFontAwesome/Usage.fs" />
+    <Compile Include="src/FableFontAwesome/Introduction.fs" />
+    <Compile Include="src/FableFontAwesome/Router.fs" />
+    <!-- Home -->
+    <Compile Include="src/Views/Demo.fs" />
+    <Compile Include="src/Views/Template.fs" />
+    <Compile Include="src/Views/Home.fs" />
+    <Compile Include="src/Views/Navbar.fs" />
+    <Compile Include="src/App.fs" />
+  </ItemGroup>
+  <Import Project="..\.paket\Paket.Restore.targets" />
+</Project>
