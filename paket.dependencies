@@ -10,6 +10,20 @@ nuget Fable.Elmish.Debugger
 nuget Fable.PowerPack
 nuget Fable.React
 nuget Thoth.Elmish.Toast
+//Fulma for docs to get it compiled until it is changed
+nuget Fulma
+nuget Fable.Template.Fulma.Minimal
+nuget Fulma.Extensions
+nuget Fulma.Elmish
+nuget Fulma.Extensions.Wikiki.Calendar
+nuget Fulma.Extensions.Wikiki.Checkradio
+nuget Fulma.Extensions.Wikiki.Divider
+nuget Fulma.Extensions.Wikiki.Slider
+nuget Fulma.Extensions.Wikiki.PageLoader
+nuget Fulma.Extensions.Wikiki.Switch
+nuget Fulma.Extensions.Wikiki.Quickview
+nuget Fulma.Extensions.Wikiki.Tooltip
+
 
 group netcorebuild
     storage:none

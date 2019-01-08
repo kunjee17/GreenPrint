@@ -4,3 +4,15 @@ Fable.Elmish.Browser
 Fable.Elmish.Debugger
 Fable.Elmish.HMR
 Fable.PowerPack
+Fulma
+Fable.Template.Fulma.Minimal
+Fulma.Extensions
+Fulma.Elmish
+Fulma.Extensions.Wikiki.Calendar
+Fulma.Extensions.Wikiki.Checkradio
+Fulma.Extensions.Wikiki.Divider
+Fulma.Extensions.Wikiki.Slider
+Fulma.Extensions.Wikiki.PageLoader
+Fulma.Extensions.Wikiki.Switch
+Fulma.Extensions.Wikiki.Quickview
+Fulma.Extensions.Wikiki.Tooltip
