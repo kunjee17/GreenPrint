@@ -155,6 +155,7 @@ Target.create "PublishNugets" (fun _ ->
     ++ "src/Fable.BluePrint.Select.fsproj"
     ++ "src/Fable.BluePrint.Table.fsproj"
     ++ "src/Fable.BluePrint.TimeZone.fsproj"
+    ++ "src/Fable.BluePrint.Icons.fsproj"
     |> Seq.iter(fun s ->
         let projFile = s
         let projDir = IO.Path.GetDirectoryName(projFile)
