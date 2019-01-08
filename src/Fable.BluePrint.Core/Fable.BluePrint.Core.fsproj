@@ -1,34 +1,45 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
+    <Description>Wrapper for BluePrint.Core for Fable Elmish</Description>
+    <PackageProjectUrl>https://github.com/kunjee17/GreenPrint</PackageProjectUrl>
+    <PackageLicenseUrl>https://github.com/kunjee17/GreenPrint/blob/master/LICENSE.md</PackageLicenseUrl>
+    <!-- <PackageIconUrl>https://raw.githubusercontent.com/MangelMaxime/Fulma/master/docs/public/assets/logo-128x128.png</PackageIconUrl> -->
+    <RepositoryUrl>https://github.com/kunjee17/GreenPrint</RepositoryUrl>
+    <PackageTags>fable;elm;fsharp;blueprint;blueprintjs;blueprint.core</PackageTags>
+    <Authors>Kunjan Dalal</Authors>
+    <Version>0.1.0-alpha-2</Version>
+  </PropertyGroup>
+  <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
+    <GenerateDocumentationFile>true</GenerateDocumentationFile>
   </PropertyGroup>
   <ItemGroup>
-    <Compile Include="Common.fs" />
-    <Compile Include="Icon.fs" />
-    <Compile Include="Breadcrumbs.fs" />
-    <Compile Include="Button.fs" />
-    <Compile Include="ButtonGroup.fs" />
-    <Compile Include="CallOut.fs" />
-    <Compile Include="Card.fs" />
-    <Compile Include="Collapse.fs" />
-    <Compile Include="Divider.fs" />
-    <Compile Include="EditableText.fs" />
-    <Compile Include="HtmlElements.fs" />
-    <Compile Include="HTMLTable.fs" />
-    <Compile Include="HotKeys.fs" />
-    <Compile Include="Menu.fs" />
-    <Compile Include="Navbar.fs" />
-    <Compile Include="NonIdealState.fs" />
-    <Compile Include="OverflowList.fs" />
-    <Compile Include="PanelStack.fs" />
-    <Compile Include="ProgressBar.fs" />
-    <Compile Include="ResizeSensor.fs" />
-    <Compile Include="Spinner.fs" />
-    <Compile Include="Tabs.fs" />
-    <Compile Include="Tag.fs" />
-    <Compile Include="Text.fs" />
-    <Compile Include="Tree.fs" />
+    <Compile Include="Core/Common.fs" />
+    <Compile Include="Core/Icon.fs" />
+    <Compile Include="Core/Breadcrumbs.fs" />
+    <Compile Include="Core/Button.fs" />
+    <Compile Include="Core/ButtonGroup.fs" />
+    <Compile Include="Core/CallOut.fs" />
+    <Compile Include="Core/Card.fs" />
+    <Compile Include="Core/Collapse.fs" />
+    <Compile Include="Core/Divider.fs" />
+    <Compile Include="Core/EditableText.fs" />
+    <Compile Include="Core/HtmlElements.fs" />
+    <Compile Include="Core/HTMLTable.fs" />
+    <Compile Include="Core/HotKeys.fs" />
+    <Compile Include="Core/Menu.fs" />
+    <Compile Include="Core/Navbar.fs" />
+    <Compile Include="Core/NonIdealState.fs" />
+    <Compile Include="Core/OverflowList.fs" />
+    <Compile Include="Core/PanelStack.fs" />
+    <Compile Include="Core/ProgressBar.fs" />
+    <Compile Include="Core/ResizeSensor.fs" />
+    <Compile Include="Core/Spinner.fs" />
+    <Compile Include="Core/Tabs.fs" />
+    <Compile Include="Core/Tag.fs" />
+    <Compile Include="Core/Text.fs" />
+    <Compile Include="Core/Tree.fs" />
     <Compile Include="FormControl/FormGroup.fs" />
     <Compile Include="FormControl/ControlGroup.fs" />
     <Compile Include="FormControl/Label.fs" />

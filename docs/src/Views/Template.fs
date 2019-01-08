@@ -26,6 +26,6 @@ There is a **Fulma Minimal** template available, this is the quickest way to get
 ![Fulma minimal template demo](assets/fulma_minimal_demo.gif)
 
 <center>
-If you want to know more about this template you can take a look at the [README.md](https://github.com/MangelMaxime/Fulma/blob/master/templates/Content/README.md)
+If you want to know more about this template you can take a look at the [README.md](https://github.com/kunjee17/GreenPrint/blob/master/templates/Content/README.md)
 </center>
         """

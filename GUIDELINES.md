@@ -32,7 +32,7 @@ Before starting contributing, please make sure you've read the [How to make a cl
 ### 1 - Solve issues
 
 #### Choose
-Just head up to the [Issues page](https://github.com/MangelMaxime/Fulma/issues?q=is%3Aopen+is%3Aissue) on Github then choose the issue you want to work on. Mention by commenting the issue that you are working on it, so we can avoid being several working on the same issue.
+Just head up to the [Issues page](https://github.com/kunjee17/GreenPrint/issues?q=is%3Aopen+is%3Aissue) on Github then choose the issue you want to work on. Mention by commenting the issue that you are working on it, so we can avoid being several working on the same issue.
 
 #### Code
 The source code for the project is located in the `src` folder.
@@ -56,7 +56,7 @@ In order to test what you've just commited, the easiest way is to create/update 
 ### 2 - Add or update documentation
 
 #### Choose
-Just head up to the [Issues page](https://github.com/MangelMaxime/Fulma/issues?q=is%3Aissue+is%3Aopen+label%3ADocumentation) on Github then choose the doc issue you want to work on.
+Just head up to the [Issues page](https://github.com/kunjee17/GreenPrint/issues?q=is%3Aissue+is%3Aopen+label%3ADocumentation) on Github then choose the doc issue you want to work on.
 
 #### Code architecture
 The documentation in the Fulma project can be found in the `docs` folder. The documentation is generated from source files located in the `docs/src` folder.
@@ -104,12 +104,12 @@ On Unix:
 Then proceed to the [local page](http://localhost:8080) and check your updates there.
 
 ### 3 - Adventurer?
-Just head up to the [Issues page](https://github.com/MangelMaxime/Fulma/issues?q=is%3Aissue+is%3Aopen+label%3A%22up+for+graps%22) on Github then choose the issue you want to work on.
+Just head up to the [Issues page](https://github.com/kunjee17/GreenPrint/issues?q=is%3Aissue+is%3Aopen+label%3A%22up+for+graps%22) on Github then choose the issue you want to work on.
 
 Follow instructions provided [here](#1---solve-issues)
 
 ### 4 - Confirmed developer?
-Just head up to the [Issues page](https://github.com/MangelMaxime/Fulma/issues?q=is%3Aissue+is%3Aopen+label%3Aenhancement) on Github then choose the issue you want to work on.
+Just head up to the [Issues page](https://github.com/kunjee17/GreenPrint/issues?q=is%3Aissue+is%3Aopen+label%3Aenhancement) on Github then choose the issue you want to work on.
 
 Follow instructions provided [here](#1---solve-issues)
 

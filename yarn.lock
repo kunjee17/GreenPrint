@@ -2288,6 +2288,12 @@ find-up@^3.0.0:
   dependencies:
     locate-path "^3.0.0"
 
+flexboxgrid-sass@^8.0.5:
+  version "8.0.5"
+  resolved "https://registry.yarnpkg.com/flexboxgrid-sass/-/flexboxgrid-sass-8.0.5.tgz#18027bc7a92f98ce877725cb36f0173bd1e74f17"
+  dependencies:
+    sass-flex-mixin "^1.0.3"
+
 flush-write-stream@^1.0.0:
   version "1.0.3"
   resolved "https://registry.yarnpkg.com/flush-write-stream/-/flush-write-stream-1.0.3.tgz#c5d586ef38af6097650b49bc41b55fabb19f35bd"
@@ -4463,6 +4469,10 @@ safe-regex@^1.1.0:
 "safer-buffer@>= 2.1.2 < 3", safer-buffer@^2.0.2, safer-buffer@^2.1.0, safer-buffer@~2.1.0:
   version "2.1.2"
   resolved "https://registry.yarnpkg.com/safer-buffer/-/safer-buffer-2.1.2.tgz#44fa161b0187b9549dd84bb91802f9bd8385cd6a"
+
+sass-flex-mixin@^1.0.3:
+  version "1.0.3"
+  resolved "https://registry.yarnpkg.com/sass-flex-mixin/-/sass-flex-mixin-1.0.3.tgz#a504d62062f7b0e773aebc395de1f45aaa6e4fd0"
 
 sass-graph@^2.2.4:
   version "2.2.4"

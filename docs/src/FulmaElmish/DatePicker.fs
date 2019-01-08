@@ -25,7 +25,7 @@ type DatePickerDemo(props) =
         { defaultConfig with DatePickerStyle = [ Position "absolute"
                                                  MaxWidth "450px"
                                                  // Fix calendar display for Ipad browsers (Safari, Chrome)
-                                                 // See #56: https://github.com/MangelMaxime/Fulma/issues/56#issuecomment-332186559
+                                                 // See #56: https://github.com/kunjee17/GreenPrint/issues/56#issuecomment-332186559
                                                  ZIndex 10. ] }
 
     do base.setInitState({ DatePickerState = { DatePicker.Types.defaultState with AutoClose = true

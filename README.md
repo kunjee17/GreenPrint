@@ -2,8 +2,8 @@
 
 [![Gitter](https://badges.gitter.im/gitterHQ/gitter.svg)](https://gitter.im/fable-compiler/Fable)
 [![NuGet version](https://badge.fury.io/nu/Fulma.svg)](https://badge.fury.io/nu/Fulma)
-[![Build status](https://ci.appveyor.com/api/projects/status/s5syrdkbmbouoa0p/branch/master?svg=true)](https://ci.appveyor.com/project/MangelMaxime/fulma/branch/master)
-[![Build Status](https://travis-ci.org/MangelMaxime/Fulma.svg?branch=master)](https://travis-ci.org/MangelMaxime/Fulma)
+[![Build status](https://ci.appveyor.com/api/projects/status/2t2ut9j5tr29rl4f/branch/master?svg=true)](https://ci.appveyor.com/project/kunjee17/greenprint/branch/master)
+[![Build Status](https://travis-ci.org/kunjee17/GreenPrint.svg?branch=master)](https://travis-ci.org/kunjee17/GreenPrint)
 ## Supported version
 
 ### Fulma
@@ -32,4 +32,4 @@ Please have a look at the general [guidelines](https://github.com/fable-elmish/e
 
 Instructions and Guidelines
 ------
-Instructions and guidelines can be found just [here](https://github.com/MangelMaxime/Fulma/blob/master/GUIDELINES.md)
+Instructions and guidelines can be found just [here](https://github.com/kunjee17/GreenPrint/blob/master/GUIDELINES.md)
