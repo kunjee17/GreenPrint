@@ -16,9 +16,10 @@ type IIconProps =
     | Style of CSSProp
     | TagName of obj
     | Title of string option
+    interface IHTMLProp
 
 [<RequireQualifiedAccess>]
 module Icon =
-    let inline icon (props : IIconProps list) (elems : ReactElement list) : ReactElement =
+    let inline icon (props : IHTMLProp list) (elems : ReactElement list) : ReactElement =
         ofImport "Icon" "@blueprintjs/core"
             (keyValueList CaseRules.LowerFirst props) elems

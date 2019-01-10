@@ -21,6 +21,7 @@ open Fable.Core.JsInterop
         | Large of bool
         | OnChange of FormEventHandler
         | TagName of obj
+        interface IHTMLProp
 
     type IRadioGroupProps =
         | ClassName of string
@@ -31,13 +32,15 @@ open Fable.Core.JsInterop
         | OnChange of (FormEvent -> unit)
         | Options of IOptionProps []
         | SelectedValue of string
+        interface IHTMLProp
+
 [<RequireQualifiedAccess>]
 module RadioGroup =
 
-    let inline radioGroup (props : IRadioGroupProps list)
+    let inline radioGroup (props : IHTMLProp list)
                (elems : ReactElement list) : ReactElement =
         ofImport "RadioGroup" "@blueprintjs/core"
             (keyValueList CaseRules.LowerFirst props) elems
-    let inline radio (props : IRadioProps list) (elems : ReactElement list) : ReactElement =
+    let inline radio (props : IHTMLProp list) (elems : ReactElement list) : ReactElement =
         ofImport "Radio" "@blueprintjs/core"
             (keyValueList CaseRules.LowerFirst props) elems

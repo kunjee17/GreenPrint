@@ -18,6 +18,7 @@ type ITabsProps =
     | RenderActiveTabPanelOnly of bool
     | SelectedTabId of TabId //TODO: as above
     | Vertical of bool
+    interface IHTMLProp
 
 type ITabProps =
     | Children of ReactNode
@@ -26,12 +27,13 @@ type ITabProps =
     | Id of TabId
     | Panel of ReactElement
     | Title of ReactNode
+    interface IHTMLProp
 
 [<RequireQualifiedAccess>]
 module Tabs =
-    let inline tabs (props : ITabsProps list) (elems : ReactElement list) : ReactElement =
+    let inline tabs (props : IHTMLProp list) (elems : ReactElement list) : ReactElement =
         ofImport "Tabs" "@blueprintjs/core"
             (keyValueList CaseRules.LowerFirst props) elems
-    let inline tab (props : ITabProps list) (elems : ReactElement list) : ReactElement =
+    let inline tab (props : IHTMLProp list) (elems : ReactElement list) : ReactElement =
         ofImport "Tab" "@blueprintjs/core"
             (keyValueList CaseRules.LowerFirst props) elems

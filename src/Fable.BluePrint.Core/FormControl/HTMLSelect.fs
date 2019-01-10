@@ -15,10 +15,11 @@ type IHTMLSelectProps =
     | OnChange of obj //TODO: write down change event
     | Options of IOptionProps []
     | Value of string
+    interface IHTMLProp
 
 [<RequireQualifiedAccess>]
 module HTMLSelect =
-    let inline htmlSelect (props : IHTMLSelectProps list)
+    let inline htmlSelect (props : IHTMLProp list)
                (elems : ReactElement list) : ReactElement =
         ofImport "HTMLSelect" "@blueprintjs/core"
             (keyValueList CaseRules.LowerFirst props) elems

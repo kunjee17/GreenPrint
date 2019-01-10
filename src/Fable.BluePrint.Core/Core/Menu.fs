@@ -11,6 +11,7 @@ type IMenuProps =
     | ClassName of string
     | Large of int
     | UlRef of obj
+    interface IHTMLProp
 
 type IMenuItemProps =
     | Active of bool
@@ -29,21 +30,21 @@ type IMenuItemProps =
     | TagName of obj
     | Target of string
     | Text of string
+    interface IHTMLProp
+
+type IMenuDividerProps =
+    | ClassName of string
+    | Title of ReactNode
+    interface IHTMLProp
 
 [<RequireQualifiedAccess>]
 module Menu =
-    type IMenuDividerProps =
-        | ClassName of string
-        | Title of ReactNode
-
-    let inline menu (props : IMenuProps list) (elems : ReactElement list) : ReactElement =
+    let inline menu (props : IHTMLProp list) (elems : ReactElement list) : ReactElement =
         ofImport "Menu" "@blueprintjs/core"
             (keyValueList CaseRules.LowerFirst props) elems
-    let inline menuItem (props : IMenuItemProps list)
-               (elems : ReactElement list) : ReactElement =
+    let inline menuItem (props : IHTMLProp list) (elems : ReactElement list) : ReactElement =
         ofImport "MenuItem" "@blueprintjs/core"
             (keyValueList CaseRules.LowerFirst props) elems
-    let inline menuDivider (props : IMenuDividerProps list)
-               (elems : ReactElement list) : ReactElement =
+    let inline menuDivider (props : IHTMLProp list) (elems : ReactElement list) : ReactElement =
         ofImport "MenuDivider" "@blueprintjs/core"
             (keyValueList CaseRules.LowerFirst props) elems

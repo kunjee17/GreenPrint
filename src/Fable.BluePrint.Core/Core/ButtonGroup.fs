@@ -13,10 +13,11 @@ type IButtonGroupProps =
     | Large of bool
     | Minimal of bool
     | Vertical of bool
+    interface IHTMLProp
 
 [<RequireQualifiedAccess>]
 module ButtonGroup =
-    let inline buttonGroup (props : IButtonGroupProps list)
+    let inline buttonGroup (props : IHTMLProp list)
                (elems : ReactElement list) : ReactElement =
         ofImport "ButtonGroup" "@blueprintjs/core"
             (keyValueList CaseRules.LowerFirst props) elems

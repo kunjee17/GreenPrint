@@ -1,3 +1,6 @@
+### 0.1.4
+* Every BluePrint prop is not inherited from IHtmlProp for better support in react component
+
 ### 0.1.3
 * Resolved the binding issue
 

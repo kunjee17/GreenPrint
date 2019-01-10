@@ -9,9 +9,10 @@ open Fable.Core.JsInterop
 type IDividerProps =
     | ClassName of string
     | TagName of obj
+    interface IHTMLProp
 
 [<RequireQualifiedAccess>]
 module Divider =
-    let inline divider (props : IDividerProps list) (elems : ReactElement list) : ReactElement =
+    let inline divider (props : IHTMLProp list) (elems : ReactElement list) : ReactElement =
         ofImport "Divider" "@blueprintjs/core"
             (keyValueList CaseRules.LowerFirst props) elems

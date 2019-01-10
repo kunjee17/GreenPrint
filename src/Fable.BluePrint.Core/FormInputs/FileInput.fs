@@ -13,10 +13,10 @@ type IFileInputProps =
     | Large of bool
     | OnInputChange of FormEventHandler
     | Text of ReactNode
+    interface IHTMLProp
 
 [<RequireQualifiedAccess>]
 module FileInput =
-    let inline fileInput (props : IFileInputProps list)
-               (elems : ReactElement list) : ReactElement =
+    let inline fileInput (props : IHTMLProp list) (elems : ReactElement list) : ReactElement =
         ofImport "FileInput" "@blueprintjs/core"
             (keyValueList CaseRules.LowerFirst props) elems

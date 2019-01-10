@@ -10,9 +10,10 @@ type ITextProps =
     | ClassName of string
     | Ellipsize of bool
     | TagName of obj
+    interface IHTMLProp
 
 [<RequireQualifiedAccess>]
 module Text =
-    let inline text (props : ITextProps list) (elems : ReactElement list) : ReactElement =
+    let inline text (props : IHTMLProp list) (elems : ReactElement list) : ReactElement =
         ofImport "Text" "@blueprintjs/core"
             (keyValueList CaseRules.LowerFirst props) elems

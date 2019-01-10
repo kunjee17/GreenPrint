@@ -12,10 +12,11 @@ type IHTMLTableProps =
     | ElementRef of (obj -> unit)
     | Interactive of bool
     | Striped of bool
+    interface IHTMLProp
 
 [<RequireQualifiedAccess>]
 module HTMLTable =
-    let inline htmlTable (props : IHTMLTableProps list)
+    let inline htmlTable (props : IHTMLProp list)
                (elems : ReactElement list) : ReactElement =
         ofImport "HTMLTable" "@blueprintjs/core"
             (keyValueList CaseRules.LowerFirst props) elems

@@ -8,7 +8,7 @@
     <RepositoryUrl>https://github.com/kunjee17/GreenPrint</RepositoryUrl>
     <PackageTags>fable;elm;fsharp;blueprint;blueprintjs;blueprint.core</PackageTags>
     <Authors>Kunjan Dalal</Authors>
-    <Version>0.1.3</Version>
+    <Version>0.1.4</Version>
   </PropertyGroup>
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
