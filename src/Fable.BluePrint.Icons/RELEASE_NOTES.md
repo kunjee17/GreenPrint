@@ -1,3 +1,5 @@
+### 0.1.3
+* Namespace updated to BluePrint
 ### 0.1.2
 * Minor namespace correction
 ### 0.1.1

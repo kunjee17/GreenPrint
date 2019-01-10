@@ -7,17 +7,17 @@ open Fable.Import.React
 open Fable.Core.JsInterop
 open Fable.BluePrint.Icons
 
+type INonIdealStateProps =
+    | Action of ReactElement
+    | Children of ReactElement
+    | ClassName of string
+    | Description of ReactElement
+    | Icon of IconNames option
+    | Title of ReactNode
+
 [<RequireQualifiedAccess>]
 module NonIdealState =
-
-    type INonIdealStateProps =
-        | Action of ReactElement
-        | Children of ReactElement
-        | ClassName of string
-        | Description of ReactElement
-        | Icon of IconNames option
-        | Title of ReactNode
-
-    let inline nonIdealState (props : INonIdealStateProps list) (elems : ReactElement list) : ReactElement =
+    let inline nonIdealState (props : INonIdealStateProps list)
+               (elems : ReactElement list) : ReactElement =
         ofImport "NonIdealState" "@blueprintjs/core"
             (keyValueList CaseRules.LowerFirst props) elems

@@ -6,17 +6,17 @@ open Fable.Helpers.React.Props
 open Fable.Import.React
 open Fable.Core.JsInterop
 
+type IButtonGroupProps =
+    | AlignText of AlignText
+    | ClassName of string
+    | Fill of bool
+    | Large of bool
+    | Minimal of bool
+    | Vertical of bool
+
 [<RequireQualifiedAccess>]
 module ButtonGroup =
-
-    type IButtonGroupProps =
-        | AlignText of AlignText
-        | ClassName of string
-        | Fill of bool
-        | Large of bool
-        | Minimal of bool
-        | Vertical of bool
-
-    let inline buttonGroup (props : IButtonGroupProps list) (elems : ReactElement list) : ReactElement =
+    let inline buttonGroup (props : IButtonGroupProps list)
+               (elems : ReactElement list) : ReactElement =
         ofImport "ButtonGroup" "@blueprintjs/core"
             (keyValueList CaseRules.LowerFirst props) elems
