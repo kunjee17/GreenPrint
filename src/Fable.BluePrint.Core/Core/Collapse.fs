@@ -12,10 +12,11 @@ type ICollapseProps =
     | IsOpen of bool
     | KeepChildrenMounted of bool
     | TransitionDuration of int
+    interface IHTMLProp
 
 [<RequireQualifiedAccess>]
 module Collapse =
-    let inline collapse (props : ICollapseProps list)
+    let inline collapse (props : IHTMLProp list)
                (elems : ReactElement list) : ReactElement =
         ofImport "Collapse" "@blueprintjs/core"
             (keyValueList CaseRules.LowerFirst props) elems

@@ -20,9 +20,10 @@ type ITagProps =
     | OnRemove of (MouseEvent * ITagProps -> unit)
     | RightIcon of IconNames option
     | Round of bool
+    interface IHTMLProp
 
 [<RequireQualifiedAccess>]
 module Tag =
-    let inline tag (props : ITagProps list) (elems : ReactElement list) : ReactElement =
+    let inline tag (props : IHTMLProp list) (elems : ReactElement list) : ReactElement =
         ofImport "Tag" "@blueprintjs/core"
             (keyValueList CaseRules.LowerFirst props) elems

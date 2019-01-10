@@ -14,10 +14,11 @@ type INonIdealStateProps =
     | Description of ReactElement
     | Icon of IconNames option
     | Title of ReactNode
+    interface IHTMLProp
 
 [<RequireQualifiedAccess>]
 module NonIdealState =
-    let inline nonIdealState (props : INonIdealStateProps list)
+    let inline nonIdealState (props : IHTMLProp list)
                (elems : ReactElement list) : ReactElement =
         ofImport "NonIdealState" "@blueprintjs/core"
             (keyValueList CaseRules.LowerFirst props) elems

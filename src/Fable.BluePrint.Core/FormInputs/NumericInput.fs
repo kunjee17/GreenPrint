@@ -29,10 +29,10 @@ type INumericInputProps =
     | SelectAllOnIncrement of bool
     | StepSize of int
     | Value of string
+    interface IHTMLProp
 
 [<RequireQualifiedAccess>]
 module NumericInput =
-    let inline numericInput (props : INumericInputProps list)
-               (elems : ReactElement list) : ReactElement =
+    let inline numericInput (props : IHTMLProp list) (elems : ReactElement list) : ReactElement =
         ofImport "NumericInput" "@blueprintjs/core"
             (keyValueList CaseRules.LowerFirst props) elems

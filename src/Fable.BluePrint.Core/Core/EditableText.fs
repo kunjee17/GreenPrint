@@ -25,10 +25,11 @@ type IEditableTextProps =
     | Placeholder of string
     | SelectAllOnFocus of bool
     | Value of string
+    interface IHTMLProp
 
 [<RequireQualifiedAccess>]
 module EditableText =
-    let inline editableText (props : IEditableTextProps list)
+    let inline editableText (props : IHTMLProp list)
                (elems : ReactElement list) : ReactElement =
         ofImport "EditableText" "@blueprintjs/core"
             (keyValueList CaseRules.LowerFirst props) elems

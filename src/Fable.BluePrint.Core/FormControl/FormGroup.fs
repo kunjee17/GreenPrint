@@ -17,10 +17,11 @@ open Fable.Core.JsInterop
         | LabelFor of string
         | LabelInfo of ReactNode
         | Style of CSSProp
+        interface IHTMLProp
 [<RequireQualifiedAccess>]
 module FormGroup =
 
 
-    let inline formGroup (props : IFormGroupProps list) (elems : ReactElement list) : ReactElement =
+    let inline formGroup (props : IHTMLProp list) (elems : ReactElement list) : ReactElement =
         ofImport "FormGroup" "@blueprintjs/core"
             (keyValueList CaseRules.LowerFirst props) elems

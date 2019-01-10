@@ -21,6 +21,7 @@ type ISliderProps =
     | StepSize of int
     | Value of int
     | Vertical of bool
+    interface IHTMLProp
 
 type IRangeSliderProps =
     | ClassName of string
@@ -36,6 +37,7 @@ type IRangeSliderProps =
     | StepSize of int
     | Value of NumberRange
     | Vertical of bool
+    interface IHTMLProp
 
 type IMultiSliderProps =
     | ClassName of string
@@ -51,6 +53,7 @@ type IMultiSliderProps =
     | ShowTrackFill of bool
     | StepSize of int
     | Vertical of bool
+    interface IHTMLProp
 
 type IHandleProps =
     | ClassName of string
@@ -61,27 +64,26 @@ type IHandleProps =
     | OnRelease of (int -> unit)
     | Type of HandleType
     | Value of int
+    interface IHTMLProp
 
 [<RequireQualifiedAccess>]
 module Slider =
-    let inline slider (props : ISliderProps list) (elems : ReactElement list) : ReactElement =
+    let inline slider (props : IHTMLProp list) (elems : ReactElement list) : ReactElement =
         ofImport "Slider" "@blueprintjs/core"
             (keyValueList CaseRules.LowerFirst props) elems
 
 [<RequireQualifiedAccess>]
 module RangeSlider =
-    let inline rangeSlider (props : IRangeSliderProps list)
-               (elems : ReactElement list) : ReactElement =
+    let inline rangeSlider (props : IHTMLProp list) (elems : ReactElement list) : ReactElement =
         ofImport "RangeSlider" "@blueprintjs/core"
             (keyValueList CaseRules.LowerFirst props) elems
 
 [<RequireQualifiedAccess>]
 module MultiSlider =
-    let inline multiSlider (props : IMultiSliderProps list)
-               (elems : ReactElement list) : ReactElement =
+    let inline multiSlider (props : IHTMLProp list) (elems : ReactElement list) : ReactElement =
         ofImport "MultiSlider" "@blueprintjs/core"
             (keyValueList CaseRules.LowerFirst props) elems
-    let inline multiSliderHandle (props : IHandleProps list)
+    let inline multiSliderHandle (props : IHTMLProp list)
                (elems : ReactElement list) : ReactElement =
         ofImport "MultiSlider.Handle" "@blueprintjs/core"
             (keyValueList CaseRules.LowerFirst props) elems

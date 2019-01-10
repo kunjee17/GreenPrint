@@ -17,6 +17,7 @@ type IBreadcrumbProps =
     | OnClick of (MouseEvent -> unit)
     | Target of string
     | Text of string
+    interface IHTMLProp
 
 type IBreadcrumbsProps =
     | BreadcrumbRenderer of (IBreadcrumbProps list -> ReactElement list -> ReactElement)
@@ -27,14 +28,15 @@ type IBreadcrumbsProps =
     | MinVisibleItems of int
     | OverflowListProps of obj //TODO: Overflow props comes here
     | PopoverProps of obj //TODO: IPopoverProps comes here
+    interface IHTMLProp
 
 [<RequireQualifiedAccess>]
 module Breadcrumbs =
-    let inline Breadcrumb (props : IBreadcrumbProps list)
+    let inline Breadcrumb (props : IHTMLProp list)
                (elems : ReactElement list) : ReactElement =
         ofImport "Breadcrumb" "@blueprintjs/core"
             (keyValueList CaseRules.LowerFirst props) elems
-    let inline breadcrumbs (props : IBreadcrumbsProps list)
+    let inline breadcrumbs (props : IHTMLProp list)
                (elems : ReactElement list) : ReactElement =
         ofImport "Breadcrumbs" "@blueprintjs/core"
             (keyValueList CaseRules.LowerFirst props) elems

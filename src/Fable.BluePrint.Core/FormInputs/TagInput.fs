@@ -29,10 +29,11 @@ type ITagInputProps =
     | Separator of string
     | TagProps of ITagProps
     | Values of ReactNode []
+    interface IHTMLProp
 
 [<RequireQualifiedAccess>]
 module TagInput =
-    let inline tagInput (props : ITagInputProps list)
+    let inline tagInput (props : IHTMLProp list)
                (elems : ReactElement list) : ReactElement =
         ofImport "TagInput" "@blueprintjs/core"
             (keyValueList CaseRules.LowerFirst props) elems

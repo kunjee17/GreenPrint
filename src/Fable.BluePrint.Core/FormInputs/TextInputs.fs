@@ -22,6 +22,7 @@ type IInputGroupProps =
     | Small of bool
     | Type of string
     | Value of string
+    interface IHTMLProp
 
 type ITextAreaProps =
     | ClassName of string
@@ -30,14 +31,13 @@ type ITextAreaProps =
     | Intent of Intent
     | Large of bool
     | Small of bool
+    interface IHTMLProp
 
 [<RequireQualifiedAccess>]
 module TextInput =
-    let inline InputGroup (props : IInputGroupProps list)
-               (elems : ReactElement list) : ReactElement =
+    let inline InputGroup (props : IHTMLProp list) (elems : ReactElement list) : ReactElement =
         ofImport "InputGroup" "@blueprintjs/core"
             (keyValueList CaseRules.LowerFirst props) elems
-    let inline textArea (props : ITextAreaProps list)
-               (elems : ReactElement list) : ReactElement =
+    let inline textArea (props : IHTMLProp list) (elems : ReactElement list) : ReactElement =
         ofImport "TextArea" "@blueprintjs/core"
             (keyValueList CaseRules.LowerFirst props) elems

@@ -20,9 +20,10 @@ type ISwitchProps =
     | Large of bool
     | OnChange of FormEventHandler
     | TagName of obj
+    interface IHTMLProp
 
 [<RequireQualifiedAccess>]
 module Switch =
-    let inline switch (props : ISwitchProps list) (elems : ReactElement list) : ReactElement =
+    let inline switch (props : IHTMLProp list) (elems : ReactElement list) : ReactElement =
         ofImport "switch" "@blueprintjs/core"
             (keyValueList CaseRules.LowerFirst props) elems
