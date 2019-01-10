@@ -1,3 +1,6 @@
+### 0.1.3
+* Resolved the binding issue
+
 ### 0.1.2
 * IProps moved out side of module for better access
 

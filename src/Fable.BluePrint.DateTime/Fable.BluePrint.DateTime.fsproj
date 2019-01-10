@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project Sdk="Microsoft.NET.Sdk">
-<PropertyGroup>
+  <PropertyGroup>
     <Description>Wrapper for BluePrint.DateTime for Fable Elmish</Description>
     <PackageProjectUrl>https://github.com/kunjee17/GreenPrint</PackageProjectUrl>
     <PackageLicenseUrl>https://github.com/kunjee17/GreenPrint/blob/master/LICENSE.md</PackageLicenseUrl>
@@ -16,6 +16,10 @@
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="Library.fs" />
+  </ItemGroup>
+  <!-- Add source files to "fable" folder in Nuget package -->
+  <ItemGroup>
+    <Content Include="*.fsproj; **\*.fs" PackagePath="fable\" />
   </ItemGroup>
   <Import Project="..\..\.paket\Paket.Restore.targets" />
 </Project>

@@ -1,3 +1,5 @@
+###  0.1.4
+* Resolved the binding issue
 ### 0.1.3
 * Namespace updated to BluePrint
 ### 0.1.2

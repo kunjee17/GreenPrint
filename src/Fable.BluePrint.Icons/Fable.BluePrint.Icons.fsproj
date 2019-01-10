@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Project Sdk="Microsoft.NET.Sdk">
-<PropertyGroup>
+  <PropertyGroup>
     <Description>Wrapper for BluePrint.Icons for Fable Elmish</Description>
     <PackageProjectUrl>https://github.com/kunjee17/GreenPrint</PackageProjectUrl>
     <PackageLicenseUrl>https://github.com/kunjee17/GreenPrint/blob/master/LICENSE.md</PackageLicenseUrl>
@@ -8,7 +8,7 @@
     <RepositoryUrl>https://github.com/kunjee17/GreenPrint</RepositoryUrl>
     <PackageTags>fable;elm;fsharp;blueprint;blueprintjs;blueprint.icons</PackageTags>
     <Authors>Kunjan Dalal</Authors>
-    <Version>0.1.3</Version>
+    <Version>0.1.4</Version>
   </PropertyGroup>
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
@@ -16,6 +16,10 @@
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="IconNames.fs" />
+  </ItemGroup>
+  <!-- Add source files to "fable" folder in Nuget package -->
+  <ItemGroup>
+    <Content Include="*.fsproj; **\*.fs" PackagePath="fable\" />
   </ItemGroup>
   <Import Project="..\..\.paket\Paket.Restore.targets" />
 </Project>
