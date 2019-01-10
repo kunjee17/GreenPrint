@@ -56,4 +56,10 @@ type HandleType =
     | END
     | START
 
+[<StringEnum>]
+type BluePrintPosition =
+    | LEFT
+    | RIGHT
+    | NONE
+
 type NumberRange = int []
