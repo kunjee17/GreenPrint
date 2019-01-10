@@ -1,4 +1,4 @@
-﻿namespace Fable.Blueprint.Icons
+﻿namespace Fable.BluePrint.Icons
 
 
 open Fable.Core

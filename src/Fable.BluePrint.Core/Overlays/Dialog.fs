@@ -1,1 +1,1 @@
-namespace Fable.Blueprint.Core
+namespace Fable.BluePrint.Core

@@ -1,4 +1,4 @@
-namespace Fable.Blueprint.Core
+namespace Fable.BluePrint.Core
 
 open Fable.Core
 open Fable.Helpers.React
