@@ -23,6 +23,6 @@ module Switch =
         | OnChange of FormEventHandler
         | TagName of obj
 
-    let inline Switch (props : ISwitchProps list) (elems : ReactElement list) : ReactElement =
+    let inline switch (props : ISwitchProps list) (elems : ReactElement list) : ReactElement =
         ofImport "switch" "@blueprintjs/core"
             (keyValueList CaseRules.LowerFirst props) elems

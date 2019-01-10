@@ -48,6 +48,10 @@
     <Compile Include="FormControl/HTMLSelect.fs" />
     <Compile Include="FormControl/Slider.fs" />
     <Compile Include="FormControl/Switch.fs" />
+    <Compile Include="FormInputs/FileInput.fs" />
+    <Compile Include="FormInputs/NumericInput.fs" />
+    <Compile Include="FormInputs/TagInput.fs" />
+    <Compile Include="FormInputs/TextInputs.fs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Fable.BluePrint.Icons\Fable.BluePrint.Icons.fsproj" />

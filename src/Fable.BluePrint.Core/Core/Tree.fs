@@ -5,7 +5,7 @@ open Fable.Helpers.React
 open Fable.Helpers.React.Props
 open Fable.Import.React
 open Fable.Core.JsInterop
-open Fable.BluePrint.Icons
+open Fable.Blueprint.Icons
 
 [<RequireQualifiedAccess>]
 module Tree =
