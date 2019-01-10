@@ -1,13 +1,10 @@
-namespace Fable.Blueprint.Core
+namespace Fable.BluePrint.Core
 
 open Fable.Core
 open Fable.Helpers.React
 open Fable.Helpers.React.Props
 open Fable.Import.React
 open Fable.Core.JsInterop
-
-[<RequireQualifiedAccess>]
-module Checkbox =
 
     type ICheckboxProps =
         | AlignIndicator of Alignment
@@ -25,6 +22,9 @@ module Checkbox =
         | Large of bool
         | OnChange of FormEventHandler
         | TagName of obj
+[<RequireQualifiedAccess>]
+module Checkbox =
+
 
     let inline checkbox (props : ICheckboxProps list) (elems : ReactElement list) : ReactElement =
         ofImport "Checkbox" "@blueprintjs/core"

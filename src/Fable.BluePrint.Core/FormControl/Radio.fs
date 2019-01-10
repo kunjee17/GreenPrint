@@ -1,4 +1,4 @@
-namespace Fable.Blueprint.Core
+namespace Fable.BluePrint.Core
 
 open Fable.Core
 open Fable.Helpers.React
@@ -6,8 +6,6 @@ open Fable.Helpers.React.Props
 open Fable.Import.React
 open Fable.Core.JsInterop
 
-[<RequireQualifiedAccess>]
-module RadioGroup =
     type IRadioProps =
         | AlignIndicator of Alignment
         | Checked of bool
@@ -33,6 +31,8 @@ module RadioGroup =
         | OnChange of (FormEvent -> unit)
         | Options of IOptionProps []
         | SelectedValue of string
+[<RequireQualifiedAccess>]
+module RadioGroup =
 
     let inline radioGroup (props : IRadioGroupProps list)
                (elems : ReactElement list) : ReactElement =

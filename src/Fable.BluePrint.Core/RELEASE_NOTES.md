@@ -1,3 +1,6 @@
+### 0.1.2
+* IProps moved out side of module for better access
+
 ### 0.1.1
 * Form Input and Form Control added
 
