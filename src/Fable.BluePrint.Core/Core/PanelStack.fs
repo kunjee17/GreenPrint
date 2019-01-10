@@ -13,7 +13,7 @@ type IPanelProps<'a> =
 type IPanel<'a> =
     | Component of ReactComponentType<IPanelProps<'a>>
     | Props of 'a
-    | Title of ReactNode
+    | Title of ReactElement
     interface IHTMLProp
 
 type IPanelStackProps<'a> =

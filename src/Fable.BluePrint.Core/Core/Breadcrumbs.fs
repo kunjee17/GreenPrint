@@ -16,7 +16,7 @@ type IBreadcrumbProps =
     | Itent of Intent
     | OnClick of (MouseEvent -> unit)
     | Target of string
-    | Text of string
+    | Text of ReactElement
     interface IHTMLProp
 
 type IBreadcrumbsProps =

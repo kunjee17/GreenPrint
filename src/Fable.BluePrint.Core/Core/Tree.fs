@@ -23,7 +23,7 @@ type ITreeNode<'a> =
 
 type ITreeNodeProps<'a> =
     | ChildNodes of ITreeNode<'a>
-    | Children of ReactNode
+    | Children of ReactElement
     | ClassName of string
     | ContentRef of (ITreeNode<'a> * ReactElement -> unit)
     | Depth of int

@@ -13,7 +13,7 @@ type INonIdealStateProps =
     | ClassName of string
     | Description of ReactElement
     | Icon of IconNames option
-    | Title of ReactNode
+    | Title of ReactElement
     interface IHTMLProp
 
 [<RequireQualifiedAccess>]

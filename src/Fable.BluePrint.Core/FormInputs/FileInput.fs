@@ -12,7 +12,7 @@ type IFileInputProps =
     | InputProps of IHTMLProp
     | Large of bool
     | OnInputChange of FormEventHandler
-    | Text of ReactNode
+    | Text of ReactElement
     interface IHTMLProp
 
 [<RequireQualifiedAccess>]

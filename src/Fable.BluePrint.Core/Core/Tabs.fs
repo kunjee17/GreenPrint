@@ -21,12 +21,12 @@ type ITabsProps =
     interface IHTMLProp
 
 type ITabProps =
-    | Children of ReactNode
+    | Children of ReactElement
     | ClassName of string
     | Disabled of bool
     | Id of TabId
     | Panel of ReactElement
-    | Title of ReactNode
+    | Title of ReactElement
     interface IHTMLProp
 
 [<RequireQualifiedAccess>]

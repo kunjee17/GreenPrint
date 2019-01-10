@@ -29,12 +29,12 @@ type IMenuItemProps =
     | ShouldDismissPopover of bool
     | TagName of obj
     | Target of string
-    | Text of string
+    | Text of ReactElement
     interface IHTMLProp
 
 type IMenuDividerProps =
     | ClassName of string
-    | Title of ReactNode
+    | Title of ReactElement
     interface IHTMLProp
 
 [<RequireQualifiedAccess>]
