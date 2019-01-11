@@ -9,14 +9,14 @@ open Fable.Core.JsInterop
 type ISwitchProps =
     | AlignIndicator of Alignment
     | Checked of bool
-    | Children of ReactNode
+    | Children of ReactElement
     | ClassName of string
     | DefaultChecked of bool
     | Disabled of bool
     | Inline of bool
     | InputRef of (ReactElement -> unit)
     | Label of string
-    | LabelElement of ReactNode
+    | LabelElement of ReactElement
     | Large of bool
     | OnChange of FormEventHandler
     | TagName of obj

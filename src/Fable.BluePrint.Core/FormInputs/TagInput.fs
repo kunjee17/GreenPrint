@@ -19,7 +19,7 @@ type ITagInputProps =
     | Large of bool
     | LeftIcon of IconNames option
     | OnAdd of (string [] -> bool)
-    | OnChange of (ReactNode [] -> bool)
+    | OnChange of (ReactElement [] -> bool)
     | OnInputChange of FormEventHandler
     | OnKeyDown of (KeyboardEvent * int -> unit)
     | OnKeyUp of (KeyboardEvent * int -> unit)
@@ -28,7 +28,7 @@ type ITagInputProps =
     | RightElement of ReactElement
     | Separator of string
     | TagProps of ITagProps
-    | Values of ReactNode []
+    | Values of ReactElement []
     interface IHTMLProp
 
 [<RequireQualifiedAccess>]

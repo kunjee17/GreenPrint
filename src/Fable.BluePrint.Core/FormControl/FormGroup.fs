@@ -10,12 +10,12 @@ open Fable.Core.JsInterop
         | ClassName of string
         | ContentClassName of string
         | Disabled of bool
-        | HelperText of ReactNode
+        | HelperText of ReactElement
         | Inline of bool
         | Intent of Intent
-        | Label of ReactNode
+        | Label of ReactElement
         | LabelFor of string
-        | LabelInfo of ReactNode
+        | LabelInfo of ReactElement
         | Style of CSSProp
         interface IHTMLProp
 [<RequireQualifiedAccess>]

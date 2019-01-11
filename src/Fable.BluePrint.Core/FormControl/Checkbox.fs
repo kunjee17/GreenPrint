@@ -9,7 +9,7 @@ open Fable.Core.JsInterop
 type ICheckboxProps =
     | AlignIndicator of Alignment
     | Checked of bool
-    | Children of ReactNode
+    | Children of ReactElement
     | ClassName of string
     | DefaultChecked of bool
     | DefaultIndeterminate of bool
@@ -18,7 +18,7 @@ type ICheckboxProps =
     | Inline of bool
     | InputRef of (ReactElement -> obj)
     | Label of string
-    | LabelElement of ReactNode
+    | LabelElement of ReactElement
     | Large of bool
     | OnChange of FormEventHandler
     | TagName of obj

@@ -1,3 +1,7 @@
+### 0.1.5
+* Text option now take react element instead of string
+* ReactNote is not React Element for better understandingly
+
 ### 0.1.4
 * Every BluePrint prop is not inherited from IHtmlProp for better support in react component
 
