@@ -2,7 +2,7 @@ module FulmaExtensions.Quickview
 
 open Fable.Core
 open Fable.Import
-open Fable.Helpers.React
+open Fable.React
 open Fulma
 open Fulma.Extensions.Wikiki
 

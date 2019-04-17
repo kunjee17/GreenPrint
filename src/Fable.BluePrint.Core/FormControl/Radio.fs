@@ -1,9 +1,9 @@
 namespace Fable.BluePrint.Core
 
 open Fable.Core
-open Fable.Helpers.React
-open Fable.Helpers.React.Props
-open Fable.Import.React
+open Fable.React
+open Fable.React.Props
+
 open Fable.Core.JsInterop
 
     type IRadioProps =
@@ -19,7 +19,7 @@ open Fable.Core.JsInterop
         | Label of string
         | LabelElement of ReactElement
         | Large of bool
-        | OnChange of FormEventHandler
+        | OnChange of string //FormEventHandler //TODO: find the missing form event handler
         | TagName of obj
         interface IHTMLProp
 
@@ -29,7 +29,7 @@ open Fable.Core.JsInterop
         | Inline of bool
         | Label of string
         | Name of string
-        | OnChange of (FormEvent -> unit)
+        | OnChange of (string -> unit) //(FormEvent -> unit) //TODO: find the missing formEvent
         | Options of IOptionProps []
         | SelectedValue of string
         interface IHTMLProp

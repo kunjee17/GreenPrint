@@ -2,7 +2,7 @@ module Widgets.MdViewer
 
 open Fable.Core
 open Fable.Import
-open Fable.Helpers.React
+open Fable.React
 open Fulma
 open Fable.FontAwesome
 open Fable.PowerPack

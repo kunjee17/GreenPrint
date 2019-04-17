@@ -1,6 +1,6 @@
 module FulmaExtensions.Calendar
 
-open Fable.Helpers.React
+open Fable.React
 open Fulma
 open Fulma.Extensions.Wikiki
 open Fable.FontAwesome

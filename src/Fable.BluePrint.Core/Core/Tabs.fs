@@ -1,9 +1,10 @@
 namespace Fable.BluePrint.Core
 
 open Fable.Core
-open Fable.Helpers.React
-open Fable.Helpers.React.Props
-open Fable.Import.React
+open Fable.React
+open Fable.React.Props
+open Browser.Types
+
 open Fable.Core.JsInterop
 
 type TabId = int

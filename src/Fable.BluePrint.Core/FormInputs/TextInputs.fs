@@ -1,9 +1,9 @@
 namespace Fable.BluePrint.Core
 
 open Fable.Core
-open Fable.Helpers.React
-open Fable.Helpers.React.Props
-open Fable.Import.React
+open Fable.React
+open Fable.React.Props
+
 open Fable.Core.JsInterop
 open Fable.BluePrint.Icons
 
@@ -15,7 +15,7 @@ type IInputGroupProps =
     | Intent of Intent
     | Large of bool
     | LeftIcon of IconNames option
-    | OnChange of FormEventHandler
+    | OnChange of string //FormEventHandler //TODO: add missing formevent handler
     | Placeholder of string
     | RightElement of ReactElement
     | Round of bool

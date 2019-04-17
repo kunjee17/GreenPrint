@@ -1,9 +1,10 @@
 namespace Fable.BluePrint.Core
 
 open Fable.Core
-open Fable.Helpers.React
-open Fable.Helpers.React.Props
-open Fable.Import.React
+open Fable.React
+open Fable.React.Props
+open Browser.Types
+
 open Fable.Core.JsInterop
 
 type IPanelProps<'a> =
@@ -11,7 +12,7 @@ type IPanelProps<'a> =
     interface IHTMLProp
 
 type IPanel<'a> =
-    | Component of ReactComponentType<IPanelProps<'a>>
+    | Component of ReactElementType<IPanelProps<'a>>
     | Props of 'a
     | Title of ReactElement
     interface IHTMLProp

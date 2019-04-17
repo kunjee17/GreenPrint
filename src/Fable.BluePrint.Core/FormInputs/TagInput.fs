@@ -1,9 +1,10 @@
 namespace Fable.BluePrint.Core
 
 open Fable.Core
-open Fable.Helpers.React
-open Fable.Helpers.React.Props
-open Fable.Import.React
+open Fable.React
+open Fable.React.Props
+open Browser.Types
+
 open Fable.Core.JsInterop
 open Fable.BluePrint.Icons
 
@@ -20,7 +21,7 @@ type ITagInputProps =
     | LeftIcon of IconNames option
     | OnAdd of (string [] -> bool)
     | OnChange of (ReactElement [] -> bool)
-    | OnInputChange of FormEventHandler
+    | OnInputChange of string //FormEventHandler //TODO: add missing form event handler
     | OnKeyDown of (KeyboardEvent * int -> unit)
     | OnKeyUp of (KeyboardEvent * int -> unit)
     | OnRemove of (string * int -> unit)

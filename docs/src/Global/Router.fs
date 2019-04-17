@@ -2,7 +2,7 @@ module Router
 
 open Elmish.Browser.Navigation
 open Elmish.Browser.UrlParser
-open Fable.Helpers.React.Props
+open Fable.React.Props
 
 type Elements =
     | Button
