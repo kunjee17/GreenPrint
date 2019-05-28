@@ -1,8 +1,8 @@
 module App.View
 
 open Elmish
-open Elmish.Browser.Navigation
-open Elmish.Browser.UrlParser
+open Elmish.Navigation
+open Elmish.UrlParser
 open Fulma
 open Fable.Core
 open Fable.Core.JsInterop
@@ -28,7 +28,7 @@ type Model =
 let urlUpdate (result : Option<Router.Page>) model =
     match result with
     | None ->
-        Browser.console.error ("Error parsing url")
+        JS.console.error ("Error parsing url")
         model, Router.modifyUrl model.CurrentPage
 
     | Some page ->
@@ -84,8 +84,8 @@ let root model dispatch =
                                 [ pageHtml model.CurrentPage ] ] ] ] ]
 
 open Elmish.React
-open Elmish.Debug
-open Elmish.HMR
+// open Elmish.Debug
+// open Elmish.HMR
 
 // App
 Program.mkProgram init update root
@@ -93,5 +93,5 @@ Program.mkProgram init update root
 // #if DEBUG
 // |> Program.withDebugger
 // #endif
-|> Program.withReact "elmish-app"
+|> Program.withReactBatched "elmish-app"
 |> Program.run

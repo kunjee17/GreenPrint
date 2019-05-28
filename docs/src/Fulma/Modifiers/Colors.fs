@@ -395,7 +395,7 @@ Benefit of using Bulma `$custom-colors` and `$custom-shades` is that even Bulma 
 
 In Fulma, you can get intellisense for your own colors by creating your own helpers:
 
-```fs
+```fsharp
 // By using inline the caller will be replaced directly by the function body
 let inline isCustomLightBlue<'a> = IsCustomColor "custom-light-blue"
 ```
@@ -416,7 +416,7 @@ The `NoColor` case is an addition of Fulma. It is useful if you want to a color 
 Example:
 *If there is an error we use `IsDanger`, otherwise we use `NoColor`*
 
-```fs
+```fsharp
 let inputColor hasError =
     if hasError then
         IsDanger

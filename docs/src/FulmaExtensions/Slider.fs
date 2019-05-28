@@ -55,10 +55,10 @@ type SliderDemoState =
     { Ratio : int }
 
 type SliderDemo(props) =
-    inherit React.Component<SliderDemoProps, SliderDemoState>(props)
+    inherit Component<SliderDemoProps, SliderDemoState>(props)
     do base.setInitState({ Ratio = 50 })
 
-    member this.onSlide (ev : React.FormEvent) =
+    member this.onSlide (ev : Browser.Types.Event) =
         let value = unbox<int> ev.currentTarget?value
         this.setState (fun prevState _ ->
             { prevState with Ratio = value }

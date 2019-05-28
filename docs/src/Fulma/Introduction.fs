@@ -70,7 +70,7 @@ Every element provided by Fulma will have at least 3 special helpers:
             [ str "I am a button" ]
     ```
 
-    Note that only one `customClass` can be provided. If you provide several, then the last one takes precedence. If you need to apply more than one custom class, then provide it as a single string, i.e. `Button.customClass "custom1 custom2"`. See [discussion](https://github.com/kunjee17/GreenPrint/issues/111) for more information.
+    Note that only one `customClass` can be provided. If you provide several, then the last one takes precedence. If you need to apply more than one custom class, then provide it as a single string, i.e. `Button.customClass "custom1 custom2"`. See [discussion](https://github.com/MangelMaxime/Fulma/issues/111) for more information.
 
 - `Props`:
 
@@ -91,7 +91,7 @@ All the compoments documented on this website, are available in the library.
 
 ### Side notes when using Ionide
 
-*Original issue: [Ionide open the wrong Color module](https://github.com/kunjee17/GreenPrint/issues/134)*
+*Original issue: [Ionide open the wrong Color module](https://github.com/MangelMaxime/Fulma/issues/134)*
 
 When using Fulma with Ionide, we recommend to add these settings to your configuration:
 
@@ -106,7 +106,7 @@ We recommend these settings, otherwise Ionide can open the module `open System` 
 
 ### Type conflict
 
-*Original issue: [Combination Fulma and Fable.Import.Browser conflict](https://github.com/kunjee17/GreenPrint/issues/142)*
+*Original issue: [Combination Fulma and Fable.Import.Browser conflict](https://github.com/MangelMaxime/Fulma/issues/142)*
 
 If you do:
 

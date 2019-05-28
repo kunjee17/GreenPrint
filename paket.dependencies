@@ -7,7 +7,9 @@ nuget Fable.Elmish.HMR prerelease
 nuget Fable.Elmish.React prerelease
 nuget Fable.Elmish.Browser prerelease
 nuget Fable.Elmish.Debugger prerelease
-nuget Fable.PowerPack prerelease
+nuget Fable.Fetch prerelease
+nuget Fable.Promise prerelease
+nuget Fable.Date prerelease
 nuget Fable.React prerelease
 nuget Thoth.Elmish.Toast prerelease
 //Fulma for docs to get it compiled until it is changed

@@ -1,7 +1,7 @@
 module Router
 
-open Elmish.Browser.Navigation
-open Elmish.Browser.UrlParser
+open Elmish.Navigation
+open Elmish.UrlParser
 open Fable.React.Props
 
 type Elements =
@@ -231,4 +231,4 @@ let newUrl route =
 
 /// Alias for Browser.window.location.href
 let modifyLocation route =
-    Fable.Import.Browser.window.location.href <- toHash route
+    Browser.Dom.window.location.href <- toHash route

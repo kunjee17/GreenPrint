@@ -54,7 +54,7 @@ let private centerText txt =
         [ str txt ]
 
 type GapSize(props) =
-    inherit React.Component<GapSizeProps, GapSizeState>(props)
+    inherit Component<GapSizeProps, GapSizeState>(props)
     do base.setInitState({ Size = Columns.Is3 })
 
     member this.SetSize (newSize : Columns.ISize) =
@@ -90,7 +90,7 @@ type GapSize(props) =
                                         this.SetSize size
                                       )
                                       Style [ Cursor "pointer" ] ] ]
-                    [ str ("is-" + Columns.ISize.toString size) ]
+                    [ str (Reflection.getCaseName size) ]
             )
             |> Tag.list [ ]
 

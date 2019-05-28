@@ -17,7 +17,7 @@ let private navButton classy href icon txt =
 let private navButtons =
     Field.div [ Field.IsGrouped ]
         [ navButton "twitter" "https://twitter.com/FableCompiler" Fa.Brand.Twitter "Twitter"
-          navButton "github" "https://github.com/kunjee17/GreenPrint/" Fa.Brand.Github "Github"
+          navButton "github" "https://github.com/MangelMaxime/Fulma/" Fa.Brand.Github "Github"
           navButton "github" "https://gitter.im/fable-compiler/Fable" Fa.Solid.Comments "Gitter" ]
 
 let view =

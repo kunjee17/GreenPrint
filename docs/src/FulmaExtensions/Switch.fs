@@ -260,7 +260,7 @@ type SwitchDemoState =
     { IsChecked : bool }
 
 type SwitchDemo(props) =
-    inherit React.Component<SwitchDemoProps, SwitchDemoState>(props)
+    inherit Component<SwitchDemoProps, SwitchDemoState>(props)
     do base.setInitState({ IsChecked = false })
 
     member this.toggleState _ =

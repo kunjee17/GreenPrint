@@ -15,7 +15,7 @@ type PageLoaderDemoState =
       IsActive : bool }
 
 type PageLoaderDemo(props) =
-    inherit React.Component<PageLoaderDemoProps, PageLoaderDemoState>(props)
+    inherit Component<PageLoaderDemoProps, PageLoaderDemoState>(props)
     do base.setInitState({ CurrentColor = IsSuccess; IsActive = false })
 
     member this.onClick newColor =

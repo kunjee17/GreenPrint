@@ -13,7 +13,7 @@ type QuickviewDemoState =
     { IsActive : bool }
 
 type QuickviewDemo(props) =
-    inherit React.Component<QuickviewDemoProps, QuickviewDemoState>(props)
+    inherit Component<QuickviewDemoProps, QuickviewDemoState>(props)
     do base.setInitState({ IsActive = false })
 
     member this.show _ =
