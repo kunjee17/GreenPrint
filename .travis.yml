@@ -2,7 +2,7 @@ language: csharp
 sudo: false
 dist: trusty
 mono: latest
-dotnet: 2.2.5
+dotnet: 2.2.107
 
 before_install:
   - nvm install 11.13.0
