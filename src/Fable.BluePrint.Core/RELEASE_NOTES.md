@@ -1,3 +1,6 @@
+### 0.1.6
+* Updated to latest fable compiler and blueprint
+
 ### 0.1.5
 * Text option now take react element instead of string
 * ReactNote is not React Element for better understandingly

@@ -1,3 +1,6 @@
+### 0.1.3
+* Updated to latest fable compiler and blueprint
+
 ### 0.1.2
 * Namespace changed to BluePrint
 
