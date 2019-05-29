@@ -1,7 +1,7 @@
 module Components.Navbar
 
-open Fable.Helpers.React
-open Fable.Helpers.React.Props
+open Fable.React
+open Fable.React.Props
 open Fulma
 
 let basic () =
@@ -16,7 +16,7 @@ let basic () =
                 [ str "Docs" ]
               Navbar.Dropdown.div [ ]
                 [ Navbar.Item.a [ ]
-                    [ str "Overwiew" ]
+                    [ str "Overview" ]
                   Navbar.Item.a [ ]
                     [ str "Elements" ]
                   Navbar.divider [ ] [ ]
@@ -28,7 +28,7 @@ let basic () =
                 [ str "Link without arrow" ]
               Navbar.Dropdown.div [ ]
                 [ Navbar.Item.a [ ]
-                    [ str "Overwiew" ] ] ]
+                    [ str "Overview" ] ] ]
           Navbar.End.div [ ]
             [ Navbar.Item.div [ ]
                 [ Button.button [ Button.Color IsSuccess ]

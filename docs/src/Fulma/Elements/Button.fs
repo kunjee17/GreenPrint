@@ -1,7 +1,7 @@
 module Elements.Button
 
-open Fable.Helpers.React
-open Fable.Helpers.React.Props
+open Fable.React
+open Fable.React.Props
 open Fulma
 open Fable.FontAwesome
 
@@ -123,7 +123,9 @@ let icons () =
                     [ ] ] ]
           Button.button [ Button.Color IsDanger
                           Button.IsOutlined ]
-            [ str "Danger" ] ]
+            [ Icon.icon [ ]
+                [ Fa.i [ Fa.Solid.ExclamationTriangle ] [ ] ]
+              span [] [ str "Danger" ] ] ]
 
 let demoHelpers () =
     div [ ClassName "block" ]

@@ -1,9 +1,9 @@
 namespace Fable.BluePrint.Core
 
 open Fable.Core
-open Fable.Helpers.React
-open Fable.Helpers.React.Props
-open Fable.Import.React
+open Fable.React
+open Fable.React.Props
+
 open Fable.Core.JsInterop
 
 type IFileInputProps =
@@ -11,7 +11,7 @@ type IFileInputProps =
     | Fill of bool
     | InputProps of IHTMLProp
     | Large of bool
-    | OnInputChange of FormEventHandler
+    | OnInputChange of string //FormEventHandler //TODO: add missing form event handler
     | Text of ReactElement
     interface IHTMLProp
 

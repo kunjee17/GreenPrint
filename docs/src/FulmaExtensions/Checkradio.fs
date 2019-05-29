@@ -2,8 +2,8 @@ module FulmaExtensions.Checkradio
 
 open Fable.Core
 open Fable.Import
-open Fable.Helpers.React
-open Fable.Helpers.React.Props
+open Fable.React
+open Fable.React.Props
 open Fulma
 open Fulma.Extensions.Wikiki
 open Fable.FontAwesome
@@ -103,7 +103,7 @@ let colorInteractive () =
               Checkradio.radio [ Checkradio.Checked true
                                  Checkradio.Id "checkradio-20"
                                  Checkradio.Color IsInfo
-                                 Checkradio.Name "rad1" ]
+                                 Checkradio.Name "rad" ]
                 [ str "Info" ]
               Checkradio.radio [ Checkradio.Checked true
                                  Checkradio.Id "checkradio-21"
@@ -358,7 +358,7 @@ type CheckradioDemoState =
     { IsChecked : bool }
 
 type CheckradioDemo(props) =
-    inherit React.Component<CheckradioDemoProps, CheckradioDemoState>(props)
+    inherit Component<CheckradioDemoProps, CheckradioDemoState>(props)
     do base.setInitState({ IsChecked = false })
 
     member this.toggleState _ =
@@ -422,7 +422,7 @@ Make classic **checkbox** and **radio** more sexy in different colors, sizes, an
                         """
 <div class="message is-info">
     <div class="message-body">
-        You need to provide <code>Checkradio.Id "unique-id"</code> in order to make <code>Checkradio</code> works
+        You need to provide <code>Checkradio.Id "unique-id"</code> in order to make <code>Checkradio</code> work.
     </div>
 </div>
 

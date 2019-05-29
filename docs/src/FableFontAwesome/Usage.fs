@@ -2,9 +2,8 @@ module FableFontAwesome.Usage
 
 open Fable.Core
 open Fable.Import
-open Fable.Helpers.React
-open Fable.Helpers.React.Props
-open Fable.PowerPack
+open Fable.React
+open Fable.React.Props
 open System
 open Fable.FontAwesome
 
@@ -279,7 +278,7 @@ Supported size:
                         """
 ### <a href="https://fontawesome.com/how-to-use/on-the-web/styling/fixed-width-icons" target="_blank" class="fas fa-book"></a> - Fixed width icons
 
-Font Awesome options to rotate or flip icons are available as options in the library.
+Font Awesome options to set one or more icons to the same fixed width.
                         """
                         (Widgets.Showcase.view iconFixedWidth (Render.includeCode __LINE__ __SOURCE_FILE__))
                      Render.docSection

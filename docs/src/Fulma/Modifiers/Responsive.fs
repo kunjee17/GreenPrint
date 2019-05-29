@@ -1,6 +1,6 @@
 module Modifiers.Responsive
 
-open Fable.Helpers.React
+open Fable.React
 open Fulma
 
 let demo() =
@@ -10,10 +10,10 @@ let demo() =
                 [ str "Visibile only on mobile" ] ]
           Message.message [ ]
             [ Message.body [ Modifiers [ Modifier.IsHidden (Screen.Desktop, true) ] ]
-                [ str "Visibile only on for touch screens" ] ]
+                [ str "Visibile only on touch screens" ] ]
           Message.message [ ]
             [ Message.body [ Modifiers [ Modifier.IsHiddenOnly (Screen.Desktop, true) ] ]
-                [ str "Hidden only on for desktop" ] ]
+                [ str "Hidden only on desktop" ] ]
           Message.message [ ]
             [ Message.body [ Modifiers [ Modifier.IsHidden (Screen.Mobile, true) ] ]
                 [ str "Hidden only on mobile" ] ] ]

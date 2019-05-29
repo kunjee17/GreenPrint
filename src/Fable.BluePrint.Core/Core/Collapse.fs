@@ -1,14 +1,15 @@
 namespace Fable.BluePrint.Core
 
 open Fable.Core
-open Fable.Helpers.React
-open Fable.Helpers.React.Props
-open Fable.Import.React
+open Fable.React
+open Fable.React.Props
+open Browser.Types
+
 open Fable.Core.JsInterop
 
 type ICollapseProps =
     | ClassName of string
-    | Component of ReactType
+    | Component of ReactElement
     | IsOpen of bool
     | KeepChildrenMounted of bool
     | TransitionDuration of int

@@ -1,7 +1,7 @@
 module Widgets.Menu
 
-open Fable.Helpers.React
-open Fable.Helpers.React.Props
+open Fable.React
+open Fable.React.Props
 open Elmish
 open Fulma
 open Fable.FontAwesome
@@ -218,7 +218,7 @@ let view model dispatch =
                    [ menuItem "Introduction" Home model.CurrentPage
                      menuItem "Demo" Showcase model.CurrentPage
                      menuItem "Template" Template model.CurrentPage
-                     menuItem "Blog" BlogIndex model.CurrentPage ]
+                     menuItem "Migration Guide" BlogIndex model.CurrentPage ]
           yield! menuFulma model.CurrentPage model.Fulma dispatch
           yield! menuFableFontAwesome model.CurrentPage
           yield! menuFulmaExtensions model.CurrentPage

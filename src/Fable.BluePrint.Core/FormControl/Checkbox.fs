@@ -1,9 +1,8 @@
 namespace Fable.BluePrint.Core
 
 open Fable.Core
-open Fable.Helpers.React
-open Fable.Helpers.React.Props
-open Fable.Import.React
+open Fable.React
+open Fable.React.Props
 open Fable.Core.JsInterop
 
 type ICheckboxProps =
@@ -20,7 +19,7 @@ type ICheckboxProps =
     | Label of string
     | LabelElement of ReactElement
     | Large of bool
-    | OnChange of FormEventHandler
+    | OnChange of string //FormEventHandler //TODO: FromEventHandler is missing from react
     | TagName of obj
     interface IHTMLProp
 
