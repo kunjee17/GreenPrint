@@ -36,12 +36,10 @@ type IButtonProps =
 
 [<RequireQualifiedAccess>]
 module Button =
-    let private fldr = fun (r:OptionsStore) el -> match el with | Props p -> r.AddProps p | x -> r.AddProp x
+    let fldr = fun (r:OptionsStore) el -> match el with | Props p -> r.AddProps p | x -> r.AddProp x
     let inline button (props : IButtonProps list) (elems : ReactElement list) : ReactElement =
-        OptionsStore
-         .Parse(props, fldr)
-         .UseToImportWithLowerCase("Button", "@blueprintjs/core", elems)
+        let props = OptionsStore.Parse(props, fldr).ToLowerFirstObj()
+        ofImport "Button" "@blueprintjs/core" props elems
     let inline anchorButton (props : IButtonProps list) (elems : ReactElement list) : ReactElement =
-        OptionsStore
-         .Parse(props, fldr)
-         .UseToImportWithLowerCase("AnchorButton", "@blueprintjs/core", elems)
+        let props = OptionsStore.Parse(props, fldr).ToLowerFirstObj()
+        ofImport "AnchorButton" "@blueprintjs/core" props elems
