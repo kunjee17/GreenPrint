@@ -12,11 +12,12 @@ type IHTMLTableProps =
     | ElementRef of (obj -> unit)
     | Interactive of bool
     | Striped of bool
+    | Props of IHTMLProp list
     interface IHTMLProp
 
 [<RequireQualifiedAccess>]
 module HTMLTable =
-    let inline htmlTable (props : IHTMLProp list)
+    let inline htmlTable (props : IHTMLTableProps list)
                (elems : ReactElement list) : ReactElement =
-        ofImport "HTMLTable" "@blueprintjs/core"
-            (keyValueList CaseRules.LowerFirst props) elems
+        let props = OptionsStore.Parse(props, fun rslt opt -> match opt with | Props p -> rslt.AddProps p | p -> rslt.AddProp p ).ToLowerFirstObj()
+        ofImport "HTMLTable" "@blueprintjs/core" props elems

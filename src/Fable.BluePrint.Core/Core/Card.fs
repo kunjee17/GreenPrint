@@ -12,10 +12,11 @@ type ICardProps =
     | Elevation of Elevation
     | Interactive of bool
     | OnClick of (MouseEvent -> unit)
+    | Props of IHTMLProp list
     interface IHTMLProp
 
 [<RequireQualifiedAccess>]
 module Card =
-    let inline card (props : IHTMLProp list) (elems : ReactElement list) : ReactElement =
-        ofImport "Card" "@blueprintjs/core"
-            (keyValueList CaseRules.LowerFirst props) elems
+    let inline card (props : ICardProps list) (elems : ReactElement list) : ReactElement =
+        let props = OptionsStore.Parse(props, fun rslt opt -> match opt with | Props p -> rslt.AddProps p | p -> rslt.AddProp p ).ToLowerFirstObj()
+        ofImport "Card" "@blueprintjs/core" props elems

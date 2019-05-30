@@ -12,10 +12,11 @@ type ICalloutProps =
     | Icon of IconNames option
     | Intent of Intent
     | Title of string
+    | Props of IHTMLProp list
     interface IHTMLProp
 
 [<RequireQualifiedAccess>]
 module Callout =
-    let inline callout (props : IHTMLProp list) (elems : ReactElement list) : ReactElement =
-        ofImport "Callout" "@blueprintjs/core"
-            (keyValueList CaseRules.LowerFirst props) elems
+    let inline callout (props : ICalloutProps list) (elems : ReactElement list) : ReactElement =
+        let props = OptionsStore.Parse(props, fun rslt opt -> match opt with | Props p -> rslt.AddProps p | p -> rslt.AddProp p ).ToLowerFirstObj()
+        ofImport "Callout" "@blueprintjs/core" props elems

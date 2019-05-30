@@ -12,6 +12,7 @@ type IMenuProps =
     | ClassName of string
     | Large of int
     | UlRef of obj
+    | Props of IHTMLProp list
     interface IHTMLProp
 
 type IMenuItemProps =
@@ -31,21 +32,23 @@ type IMenuItemProps =
     | TagName of obj
     | Target of string
     | Text of ReactElement
+    | Props of IHTMLProp list
     interface IHTMLProp
 
 type IMenuDividerProps =
     | ClassName of string
     | Title of ReactElement
+    | Props of IHTMLProp list
     interface IHTMLProp
 
 [<RequireQualifiedAccess>]
 module Menu =
-    let inline menu (props : IHTMLProp list) (elems : ReactElement list) : ReactElement =
-        ofImport "Menu" "@blueprintjs/core"
-            (keyValueList CaseRules.LowerFirst props) elems
-    let inline menuItem (props : IHTMLProp list) (elems : ReactElement list) : ReactElement =
-        ofImport "MenuItem" "@blueprintjs/core"
-            (keyValueList CaseRules.LowerFirst props) elems
-    let inline menuDivider (props : IHTMLProp list) (elems : ReactElement list) : ReactElement =
-        ofImport "MenuDivider" "@blueprintjs/core"
-            (keyValueList CaseRules.LowerFirst props) elems
+    let inline menu (props : IMenuProps list) (elems : ReactElement list) : ReactElement =
+        let props = OptionsStore.Parse(props, fun rslt opt -> match opt with | IMenuProps.Props p -> rslt.AddProps p | p -> rslt.AddProp p ).ToLowerFirstObj()
+        ofImport "Menu" "@blueprintjs/core" props elems
+    let inline menuItem (props : IMenuItemProps list) (elems : ReactElement list) : ReactElement =
+        let props = OptionsStore.Parse(props, fun rslt opt -> match opt with | IMenuItemProps.Props p -> rslt.AddProps p | p -> rslt.AddProp p ).ToLowerFirstObj()
+        ofImport "MenuItem" "@blueprintjs/core" props elems
+    let inline menuDivider (props : IMenuDividerProps list) (elems : ReactElement list) : ReactElement =
+        let props = OptionsStore.Parse(props, fun rslt opt -> match opt with | IMenuDividerProps.Props p -> rslt.AddProps p | p -> rslt.AddProp p ).ToLowerFirstObj()
+        ofImport "MenuDivider" "@blueprintjs/core" props elems

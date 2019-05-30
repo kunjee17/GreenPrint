@@ -13,11 +13,12 @@ type IButtonGroupProps =
     | Large of bool
     | Minimal of bool
     | Vertical of bool
+    | Props of IHTMLProp list
     interface IHTMLProp
 
 [<RequireQualifiedAccess>]
 module ButtonGroup =
-    let inline buttonGroup (props : IHTMLProp list)
+    let inline buttonGroup (props : IButtonGroupProps list)
                (elems : ReactElement list) : ReactElement =
-        ofImport "ButtonGroup" "@blueprintjs/core"
-            (keyValueList CaseRules.LowerFirst props) elems
+        let props = OptionsStore.Parse(props, fun rslt opt -> match opt with | Props p -> rslt.AddProps p | p -> rslt.AddProp p ).ToLowerFirstObj()
+        ofImport "ButtonGroup" "@blueprintjs/core" props elems

@@ -17,10 +17,11 @@ type IOverflowListProps<'a> =
     | Style of CSSProp
     | TagName of obj
     | VisibleItemRenderer of ('a * int -> ReactElement)
+    | Props of IHTMLProp list
     interface IHTMLProp
 
 [<RequireQualifiedAccess>]
 module OverflowList =
-    let inline overflowList (props : IHTMLProp list) (elems : ReactElement list) : ReactElement =
-        ofImport "OverflowList" "@blueprintjs/core"
-            (keyValueList CaseRules.LowerFirst props) elems
+    let inline overflowList (props : IOverflowListProps<'a> list) (elems : ReactElement list) : ReactElement =
+        let props = OptionsStore.Parse(props, fun rslt opt -> match opt with | Props p -> rslt.AddProps p | p -> rslt.AddProp p ).ToLowerFirstObj()
+        ofImport "OverflowList" "@blueprintjs/core" props elems
