@@ -55,14 +55,8 @@ let root model dispatch =
     let pageHtml =
         function
         | Router.Home -> Home.view
-        | Router.Fulma fulmaPage ->
+        | Router.Core fulmaPage ->
             Fulma.Router.view fulmaPage
-        | Router.FulmaExtensions fulmaExtensionsPage ->
-            FulmaExtensions.Router.view fulmaExtensionsPage
-        | Router.FulmaElmish fulmaElmishPage ->
-            FulmaElmish.Router.view fulmaElmishPage
-        | Router.FableFontAwesome fableFontAwesome ->
-            FableFontAwesome.Router.view fableFontAwesome
 
     div [ ]
         [ Navbar.view

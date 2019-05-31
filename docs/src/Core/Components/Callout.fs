@@ -1,4 +1,4 @@
-module Components.Menu
+module Components.Callout
 
 open Fable.React
 open Fulma

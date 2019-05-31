@@ -1,4 +1,4 @@
-module Components.Breadcrumb
+module Components.Breadcrumbs
 
 open Fable.React
 open Fable.React.Props

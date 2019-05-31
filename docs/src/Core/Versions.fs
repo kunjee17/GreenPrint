@@ -7,7 +7,7 @@ let view =
     ![Fulma logo](assets/logo_transparent.svg)
 </center>
 
-Here you can find which version of each library is supported by Fulma.
+Here you can find which version of each library is supported by Greenprint.
 
 <table class="bp3-html-table bp3-html-table-bordered bp3-html-table-condensed bp3-html-table-striped" style="width: auto;">
     <thead>

@@ -6,58 +6,60 @@ open Elmish
 open Fulma
 open Fable.FontAwesome
 
-type FulmaModules =
-    | Elements
+type CoreModules =
     | Components
-    | Layouts
-    | Modifiers
+    | FormControls
+    | FormInputs
+    | Overlays
 
 type Library =
-    | Fulma of FulmaModules
+    | Core of CoreModules
 
-type Fulma =
-    { IsElementsExpanded : bool
+type Core =
+    {
       IsComponentsExpanded : bool
-      IsLayoutExpanded : bool
-      IsChangeLogExpanded : bool
-      IsModifiersExpanded : bool }
+      IsFormControlsExpanded : bool
+      IsFormInputsExpanded : bool
+      IsOverlaysExpanded : bool }
 
 type Model =
-    { Fulma : Fulma
+    { Core : Core
       CurrentPage : Router.Page }
 
 type Msg =
     | ToggleMenu of Library
 
 let init currentPage : Model =
-    { Fulma =
-            { IsElementsExpanded = false
+    { Core =
+            {
               IsComponentsExpanded = false
-              IsLayoutExpanded = false
-              IsChangeLogExpanded = false
-              IsModifiersExpanded = false }
+              IsFormControlsExpanded = false
+              IsFormInputsExpanded = false
+              IsOverlaysExpanded = false }
       CurrentPage = currentPage }
 
 let update msg model =
     match msg with
     | ToggleMenu library ->
         match library with
-        | Fulma ``module`` ->
+        | Core ``module`` ->
             match ``module`` with
-            | Elements ->
-                { model with Fulma =
-                                { model.Fulma with IsElementsExpanded = not model.Fulma.IsElementsExpanded } }
             | Components ->
-                { model with Fulma =
-                                { model.Fulma with IsComponentsExpanded = not model.Fulma.IsComponentsExpanded } }
+                { model with Core =
+                                { model.Core with IsComponentsExpanded = not model.Core.IsComponentsExpanded } }
 
-            | Layouts ->
-                { model with Fulma =
-                                { model.Fulma with IsLayoutExpanded = not model.Fulma.IsLayoutExpanded } }
+            | FormControls ->
+                { model with Core =
+                                { model.Core with IsFormControlsExpanded = not model.Core.IsFormControlsExpanded } }
 
-            | Modifiers ->
-                { model with Fulma =
-                                { model.Fulma with IsModifiersExpanded = not model.Fulma.IsModifiersExpanded } }
+            | FormInputs ->
+                { model with Core =
+                                { model.Core with IsFormInputsExpanded = not model.Core.IsFormInputsExpanded}}
+
+            | Overlays ->
+                {model with Core =
+                                { model.Core with IsOverlaysExpanded = not model.Core.IsOverlaysExpanded}}
+
 
         , Cmd.none
 
@@ -70,154 +72,135 @@ let private menuItem label page currentPage =
            [ str label ] ]
 
 let private menuFulma currentPage subModel dispatch =
-    let (elementsClass, elementsIcon) =
-        if not subModel.IsElementsExpanded then
-            match currentPage with
-            | Fulma (Element _) ->
-                "menu-group is-active", Fa.Solid.AngleDown
-            | _ -> "menu-group", Fa.Solid.AngleDown
-        else
-            "menu-group", Fa.Solid.AngleUp
 
     let (componentsClass, componentsIcon) =
         if not subModel.IsComponentsExpanded then
             match currentPage with
-            | Fulma (Component _) ->
+            | Core (Components _) ->
                 "menu-group is-active", Fa.Solid.AngleDown
             | _ -> "menu-group", Fa.Solid.AngleDown
         else
             "menu-group", Fa.Solid.AngleUp
 
-    let (layoutsClass, layoutsIcon) =
-        if not subModel.IsLayoutExpanded then
+    let (formControlClass, formControlIcon) =
+        if not subModel.IsFormControlsExpanded then
             match currentPage with
-            | Fulma (Layout _) ->
+            | Core (FormControls _) ->
                 "menu-group is-active", Fa.Solid.AngleDown
             | _ -> "menu-group", Fa.Solid.AngleDown
         else
             "menu-group", Fa.Solid.AngleUp
 
-    let (modifiersClass, modifiersIcon) =
-        if not subModel.IsModifiersExpanded then
+    let (formInputsClass, formInputsIcon) =
+        if not subModel.IsFormInputsExpanded then
             match currentPage with
-            | Fulma (Modifier _) ->
+            | Core (FormInputs _) ->
                 "menu-group is-active", Fa.Solid.AngleDown
             | _ -> "menu-group", Fa.Solid.AngleDown
         else
             "menu-group", Fa.Solid.AngleUp
 
-    [ Menu.label [ ] [ str "Fulma" ]
+    let (overlaysClass, overlaysIcon) =
+        if not subModel.IsOverlaysExpanded then
+            match currentPage with
+            | Core (Overlays _) ->
+                "menu-group is-active", Fa.Solid.AngleDown
+            | _ -> "menu-group", Fa.Solid.AngleDown
+        else
+            "menu-group", Fa.Solid.AngleUp
+
+    [ Menu.label [ ] [ str "Core" ]
       Menu.list [ ]
-        [ menuItem "Introduction" (Fulma FulmaPage.Introduction) currentPage
-          menuItem "Versions" (Fulma FulmaPage.Versions) currentPage ]
-      Menu.list [ ]
-        [ li [ ]
-             [ yield a [ ClassName modifiersClass
-                         OnClick (fun _ -> ToggleMenu (Library.Fulma Modifiers) |> dispatch ) ]
-                       [ span [ ]
-                            [ str "Modifiers" ]
-                         Icon.icon [ ]
-                            [ Fa.i [ modifiersIcon ]
-                                [ ] ] ]
-               if subModel.IsModifiersExpanded then
-                    yield ul [ ]
-                             [ menuItem "Basics" (Fulma (Modifier Modifiers.Basics)) currentPage
-                               menuItem "Colors & Shades" (Fulma (Modifier Modifiers.Colors)) currentPage
-                               menuItem "Typography" (Fulma (Modifier Modifiers.Typography)) currentPage
-                               menuItem "Responsive" (Fulma (Modifier Modifiers.Responsive)) currentPage ] ] ]
-      Menu.list [ ]
-        [ li [ ]
-             [ yield a [ ClassName layoutsClass
-                         OnClick (fun _ -> ToggleMenu (Library.Fulma Layouts) |> dispatch ) ]
-                       [ span [ ] [ str "Layouts" ]
-                         Icon.icon [ ]
-                            [ Fa.i [ layoutsIcon ]
-                                [ ] ] ]
-               if subModel.IsLayoutExpanded then
-                    yield ul [ ]
-                             [ menuItem "Columns" (Fulma (Layout Layouts.Columns)) currentPage
-                               menuItem "Container" (Fulma (Layout Layouts.Container)) currentPage
-                               menuItem "Footer" (Fulma (Layout Layouts.Footer)) currentPage
-                               menuItem "Hero" (Fulma (Layout Layouts.Hero)) currentPage
-                               menuItem "Level" (Fulma (Layout Layouts.Level)) currentPage
-                               menuItem "Section" (Fulma (Layout Layouts.Section)) currentPage
-                               menuItem "Tile" (Fulma (Layout Layouts.Tile)) currentPage ] ] ]
-      Menu.list [ ]
-        [ li [ ]
-             [ yield a [ ClassName elementsClass
-                         OnClick (fun _ -> ToggleMenu (Library.Fulma Elements) |> dispatch ) ]
-                       [ span [ ] [ str "Elements" ]
-                         Icon.icon [ ]
-                            [ Fa.i [ elementsIcon ]
-                                [ ] ] ]
-               if subModel.IsElementsExpanded then
-                    yield ul [ ]
-                             [ menuItem "Box" (Fulma (Element Elements.Box)) currentPage
-                               menuItem "Button" (Fulma (Element Elements.Button)) currentPage
-                               menuItem "Content" (Fulma (Element Elements.Content))  currentPage
-                               menuItem "Delete" (Fulma (Element Elements.Delete)) currentPage
-                               menuItem "Form" (Fulma (Element Elements.Form)) currentPage
-                               menuItem "Icon" (Fulma (Element Elements.Icon)) currentPage
-                               menuItem "Image" (Fulma (Element Elements.Image)) currentPage
-                               menuItem "Notification" (Fulma (Element Elements.Notification)) currentPage
-                               menuItem "Progress" (Fulma (Element Elements.Progress))  currentPage
-                               menuItem "Table" (Fulma (Element Elements.Table)) currentPage
-                               menuItem "Tag" (Fulma (Element Elements.Tag)) currentPage
-                               menuItem "Title" (Fulma (Element Elements.Title)) currentPage ] ] ]
+        [
+            menuItem "Introduction" (Core CorePage.Introduction) currentPage
+            menuItem "Versions" (Core CorePage.Versions) currentPage
+            menuItem "Accessibility" (Core CorePage.Accessibility) currentPage
+            menuItem "Classes" (Core CorePage.Classes) currentPage
+            menuItem "Colors" (Core CorePage.Colors) currentPage
+            menuItem "Typography" (Core CorePage.Typography) currentPage
+            menuItem "Variables" (Core CorePage.Variables) currentPage
+           ]
+      //Menu.list [ ]
+      //  [ li [ ]
+      //       [ yield a [ ClassName overlaysClass
+      //                   OnClick (fun _ -> ToggleMenu (Library.Core Modifiers) |> dispatch ) ]
+      //                 [ span [ ]
+      //                      [ str "Modifiers" ]
+      //                   Icon.icon [ ]
+      //                      [ Fa.i [ overlaysIcon ]
+      //                          [ ] ] ]
+      //         if subModel.IsOverlaysExpanded then
+      //              yield ul [ ]
+      //                       [ menuItem "Basics" (Core (Modifier Modifiers.Basics)) currentPage
+      //                         menuItem "Colors & Shades" (Core (Modifier Modifiers.Colors)) currentPage
+      //                         menuItem "Typography" (Core (Modifier Modifiers.Typography)) currentPage
+      //                         menuItem "Responsive" (Core (Modifier Modifiers.Responsive)) currentPage ] ] ]
+      //Menu.list [ ]
+      //  [ li [ ]
+      //       [ yield a [ ClassName formInputsClass
+      //                   OnClick (fun _ -> ToggleMenu (Library.Core Layouts) |> dispatch ) ]
+      //                 [ span [ ] [ str "Layouts" ]
+      //                   Icon.icon [ ]
+      //                      [ Fa.i [ formControlIcon ]
+      //                          [ ] ] ]
+      //         if subModel.IsFormControlsExpanded then
+      //              yield ul [ ]
+      //                       [ menuItem "Columns" (Core (Layout Layouts.Columns)) currentPage
+      //                         menuItem "Container" (Core (Layout Layouts.Container)) currentPage
+      //                         menuItem "Footer" (Core (Layout Layouts.Footer)) currentPage
+      //                         menuItem "Hero" (Core (Layout Layouts.Hero)) currentPage
+      //                         menuItem "Level" (Core (Layout Layouts.Level)) currentPage
+      //                         menuItem "Section" (Core (Layout Layouts.Section)) currentPage
+      //                         menuItem "Tile" (Core (Layout Layouts.Tile)) currentPage ] ] ]
+      //Menu.list [ ]
+        //[ li [ ]
+             //[ yield a [ ClassName elementsClass
+               //          OnClick (fun _ -> ToggleMenu (Library.Core Elements) |> dispatch ) ]
+               //        [ span [ ] [ str "Elements" ]
+               //          Icon.icon [ ]
+               //             [ Fa.i [ elementsIcon ]
+               //                 [ ] ] ]
+               //if subModel.IsElementsExpanded then
+                    //yield ul [ ]
+                             //[ menuItem "Box" (Core (Element Elements.Box)) currentPage
+                               //menuItem "Button" (Core (Element Elements.Button)) currentPage
+                               //menuItem "Content" (Core (Element Elements.Content))  currentPage
+                               //menuItem "Delete" (Core (Element Elements.Delete)) currentPage
+                               //menuItem "Form" (Core (Element Elements.Form)) currentPage
+                               //menuItem "Icon" (Core (Element Elements.Icon)) currentPage
+                               //menuItem "Image" (Core (Element Elements.Image)) currentPage
+                               //menuItem "Notification" (Core (Element Elements.Notification)) currentPage
+                               //menuItem "Progress" (Core (Element Elements.Progress))  currentPage
+                               //menuItem "Table" (Core (Element Elements.Table)) currentPage
+                               //menuItem "Tag" (Core (Element Elements.Tag)) currentPage
+                               //menuItem "Title" (Core (Element Elements.Title)) currentPage ] ] ]
       Menu.list [ ]
         [ li [ ]
              [ yield a [ ClassName componentsClass
-                         OnClick (fun _ -> ToggleMenu (Library.Fulma Components) |> dispatch ) ]
+                         OnClick (fun _ -> ToggleMenu (Library.Core CoreModules.Components  ) |> dispatch ) ]
                        [ span [ ] [ str "Components" ]
                          Icon.icon [ ]
                             [ Fa.i [ componentsIcon ]
                                 [ ] ] ]
                if subModel.IsComponentsExpanded then
                     yield ul [ ]
-                             [ menuItem "Breadcrumb" (Fulma (Component Components.Breadcrumb)) currentPage
-                               menuItem "Card" (Fulma (Component Components.Card)) currentPage
-                               menuItem "Dropdown" (Fulma (Component Components.Dropdown)) currentPage
-                               menuItem "Media" (Fulma (Component Components.Media)) currentPage
-                               menuItem "Menu" (Fulma (Component Components.Menu)) currentPage
-                               menuItem "Message" (Fulma (Component Components.Message)) currentPage
-                               menuItem "Modal" (Fulma (Component Components.Modal)) currentPage
-                               menuItem "Navbar" (Fulma (Component Components.Navbar)) currentPage
-                               menuItem "Pagination" (Fulma (Component Components.Pagination)) currentPage
-                               menuItem "Panel" (Fulma (Component Components.Panel)) currentPage
-                               menuItem "Tabs" (Fulma (Component Components.Tabs)) currentPage ] ] ] ]
+                             [
+                                menuItem "Breadcrumbs" (Core (Components Components.Breadcrumbs)) currentPage
+                                menuItem "Button" (Core (Components Components.Button)) currentPage
+                                menuItem "ButtonGroup" (Core (Components Components.ButtonGroup)) currentPage
+                                menuItem "Callout" (Core (Components Components.Callout)) currentPage
+                                menuItem "Card" (Core (Components Components.Card)) currentPage
+                                menuItem "Collapse" (Core (Components Components.Collapse)) currentPage
 
-let private menuFableFontAwesome currentPage =
-    [ Menu.label [ ] [ str "Fable.FontAwesome" ]
-      Menu.list [ ]
-        [ menuItem "Introduction" (FableFontAwesome FableFontAwesomePage.Introduction) currentPage ]
-      Menu.list [ ]
-        [ menuItem "Usage" (FableFontAwesome FableFontAwesomePage.Usage) currentPage ] ]
+                               ] ] ] ]
 
-let private menuFulmaExtensions currentPage =
-    [ Menu.label [ ] [ str "Fulma.Extensions.Wikiki" ]
-      Menu.list [ ]
-        [ menuItem "Calendar" (FulmaExtensions Calendar) currentPage
-          menuItem "Checkradio" (FulmaExtensions Checkradio) currentPage
-          menuItem "Divider" (FulmaExtensions Divider) currentPage
-          menuItem "Page-loader" (FulmaExtensions PageLoader) currentPage
-          menuItem "Quickview" (FulmaExtensions Quickview) currentPage
-          menuItem "Slider" (FulmaExtensions Slider) currentPage
-          menuItem "Switch" (FulmaExtensions Switch) currentPage
-          menuItem "Tooltip" (FulmaExtensions Tooltip) currentPage ] ]
 
-let private menuFulmaElmish currentPage =
-    [ Menu.label [ ] [ str "Fulma.Elmish" ]
-      Menu.list [ ]
-        [ menuItem "Introduction" (FulmaElmish FulmaElmishPage.Introduction) currentPage ]
-      Menu.list [ ]
-        [ menuItem "Date picker" (FulmaElmish DatePicker) currentPage ] ]
+
 
 let view model dispatch =
     Menu.menu [ ]
         [ yield Menu.list [ ]
                    [ menuItem "Introduction" Home model.CurrentPage
                     ]
-          yield! menuFulma model.CurrentPage model.Fulma dispatch
-          yield! menuFableFontAwesome model.CurrentPage
-          yield! menuFulmaExtensions model.CurrentPage
-          yield! menuFulmaElmish model.CurrentPage ]
+          yield! menuFulma model.CurrentPage model.Core dispatch
+          ]

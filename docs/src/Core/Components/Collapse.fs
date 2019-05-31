@@ -1,4 +1,4 @@
-module Components.Message
+module Components.Collapse
 
 open Fable.React
 open Fulma
