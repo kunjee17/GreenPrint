@@ -12,10 +12,11 @@ type IProgressBarProps =
     | Intent of Intent
     | Stripes of bool
     | Value of float
+    | Props of IHTMLProp list
     interface IHTMLProp
 
 [<RequireQualifiedAccess>]
 module ProgressBar =
-    let inline progressBar (props : IHTMLProp list) (elems : ReactElement list) : ReactElement =
-        ofImport "ProgressBar" "@blueprintjs/core"
-            (keyValueList CaseRules.LowerFirst props) elems
+    let inline progressBar (props : IProgressBarProps list) (elems : ReactElement list) : ReactElement =
+        let props = OptionsStore.Parse(props, fun rslt opt -> match opt with | Props p -> rslt.AddProps p | p -> rslt.AddProp p ).ToLowerFirstObj()
+        ofImport "ProgressBar" "@blueprintjs/core" props elems

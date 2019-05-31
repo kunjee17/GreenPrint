@@ -5,13 +5,15 @@ open Fable.React
 open Fable.React.Props
 open Browser.Types
 
-open Fable.Core.JsInterop
 open Fable.BluePrint.Icons
+open OptionsStore
 
 [<StringEnum>]
 type ButtonType =
     | Button
     | Submit
+
+// type Props = Props of
 
 type IButtonProps =
     | Active of bool
@@ -28,13 +30,14 @@ type IButtonProps =
     | RightIcon of string //IconName will come
     | Text of ReactElement
     | Type of ButtonType
+    | Props of IHTMLProp list
     interface IHTMLProp
 
 [<RequireQualifiedAccess>]
 module Button =
-    let inline button (props : IHTMLProp list) (elems : ReactElement list) : ReactElement =
-        ofImport "Button" "@blueprintjs/core"
-            (keyValueList CaseRules.LowerFirst props) elems
-    let inline anchorButton (props : IHTMLProp list) (elems : ReactElement list) : ReactElement =
-        ofImport "AnchorButton" "@blueprintjs/core"
-            (keyValueList CaseRules.LowerFirst props) elems
+    let inline button (props : IButtonProps list) (elems : ReactElement list) : ReactElement =
+        let props = OptionsStore.Parse(props, fun (r:OptionsStore) el -> match el with | Props p -> r.AddProps p | x -> r.AddProp x).ToLowerFirstObj()
+        ofImport "Button" "@blueprintjs/core" props elems
+    let inline anchorButton (props : IButtonProps list) (elems : ReactElement list) : ReactElement =
+        let props = OptionsStore.Parse(props, fun (r:OptionsStore) el -> match el with | Props p -> r.AddProps p | x -> r.AddProp x).ToLowerFirstObj()
+        ofImport "AnchorButton" "@blueprintjs/core" props elems

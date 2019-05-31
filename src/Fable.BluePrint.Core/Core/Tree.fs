@@ -43,7 +43,7 @@ type ITreeNodeProps<'a> =
     | OnExpand of (ITreeNode<'a> * MouseEvent -> unit)
     | Path of int []
     | SecondaryLabel of string option
-    interface IHTMLProp
+    interface IHTMLProp // TODO Why don't used
 
 type TreeEventHandler<'a> = ITreeNode<'a> * int [] * MouseEvent -> unit
 
@@ -55,10 +55,11 @@ type ITreeProps<'a> =
     | OnNodeContextMenu of TreeEventHandler<'a>
     | OnNodeDoubleClick of TreeEventHandler<'a>
     | OnNodeExpand of TreeEventHandler<'a>
+    | Props of IHTMLProp list
     interface IHTMLProp
 
 [<RequireQualifiedAccess>]
 module Tree =
-    let inline tree (props : IHTMLProp list) (elems : ReactElement list) : ReactElement =
-        ofImport "Tree" "@blueprintjs/core"
-            (keyValueList CaseRules.LowerFirst props) elems
+    let inline tree (props : ITreeProps<'a> list) (elems : ReactElement list) : ReactElement =
+        let props = OptionsStore.Parse(props, fun rslt opt -> match opt with | ITreeProps.Props p -> rslt.AddProps p | p -> rslt.AddProp p ).ToLowerFirstObj()
+        ofImport "Tree" "@blueprintjs/core" props elems

@@ -16,10 +16,11 @@ type IIconProps =
     | Style of CSSProp
     | TagName of obj
     | Title of string option
+    | Props of IHTMLProp list
     interface IHTMLProp
 
 [<RequireQualifiedAccess>]
 module Icon =
-    let inline icon (props : IHTMLProp list) (elems : ReactElement list) : ReactElement =
-        ofImport "Icon" "@blueprintjs/core"
-            (keyValueList CaseRules.LowerFirst props) elems
+    let inline icon (props : IIconProps list) (elems : ReactElement list) : ReactElement =
+        let props = OptionsStore.Parse(props, fun rslt opt -> match opt with | Props p -> rslt.AddProps p | p -> rslt.AddProp p ).ToLowerFirstObj()
+        ofImport "Icon" "@blueprintjs/core" props elems

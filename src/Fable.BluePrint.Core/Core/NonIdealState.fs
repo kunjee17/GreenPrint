@@ -14,11 +14,12 @@ type INonIdealStateProps =
     | Description of ReactElement
     | Icon of IconNames option
     | Title of ReactElement
+    | Props of IHTMLProp list
     interface IHTMLProp
 
 [<RequireQualifiedAccess>]
 module NonIdealState =
-    let inline nonIdealState (props : IHTMLProp list)
+    let inline nonIdealState (props : INonIdealStateProps list)
                (elems : ReactElement list) : ReactElement =
-        ofImport "NonIdealState" "@blueprintjs/core"
-            (keyValueList CaseRules.LowerFirst props) elems
+        let props = OptionsStore.Parse(props, fun rslt opt -> match opt with | Props p -> rslt.AddProps p | p -> rslt.AddProp p ).ToLowerFirstObj()
+        ofImport "NonIdealState" "@blueprintjs/core" props elems

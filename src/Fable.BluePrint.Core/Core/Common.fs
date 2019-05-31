@@ -6,6 +6,7 @@ open Fable.React.Props
 
 open Fable.Core.JsInterop
 
+
 [<StringEnum>]
 type Alignment =
     | CENTER
@@ -63,3 +64,21 @@ type BluePrintPosition =
     | NONE
 
 type NumberRange = int []
+
+module OptionsStore =
+  type OptionsStore =
+   { Props : IHTMLProp list} with
+   member this.AddProp prop =
+     { this with Props = prop::this.Props }
+   member this.AddProps props =
+     { this with Props = props@this.Props }
+   member this.ToKeyValListObj (caseRules: CaseRules ) =
+     keyValueList caseRules this.Props
+   member this.ToLowerFirstObj() =
+     this.ToKeyValListObj (CaseRules.LowerFirst)
+
+
+
+  let Empty = { Props = [] }
+
+  let Parse (props, folder) = props |> List.fold folder Empty

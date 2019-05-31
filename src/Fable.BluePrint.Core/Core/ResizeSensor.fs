@@ -14,10 +14,11 @@ type IResizeEntry =
 type IResizeSensorProps =
     | ObserveParents of bool
     | OnResize of (IResizeEntry [] -> unit)
+    | Props of IHTMLProp list
     interface IHTMLProp
 
 [<RequireQualifiedAccess>]
 module ResizeSensor =
-    let inline resizeSensor (props : IHTMLProp list) (elems : ReactElement list) : ReactElement =
-        ofImport "ResizeSensor" "@blueprintjs/core"
-            (keyValueList CaseRules.LowerFirst props) elems
+    let inline resizeSensor (props : IResizeSensorProps list) (elems : ReactElement list) : ReactElement =
+        let props = OptionsStore.Parse(props, fun rslt opt -> match opt with | Props p -> rslt.AddProps p | p -> rslt.AddProp p ).ToLowerFirstObj()
+        ofImport "ResizeSensor" "@blueprintjs/core" props elems
