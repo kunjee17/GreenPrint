@@ -1,5 +1,9 @@
 # RELEASE NOTES
 
+## 0.1.7
+
+* HTMLProps added as option
+
 ## 0.1.6
 
 * Updated to latest fable compiler and blueprint

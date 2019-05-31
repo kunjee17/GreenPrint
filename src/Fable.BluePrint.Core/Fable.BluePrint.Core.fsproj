@@ -1,49 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
 <Project Sdk="Microsoft.NET.Sdk">
-  <PropertyGroup>
-    <TargetFramework>netstandard2.0</TargetFramework>
-  </PropertyGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\Fable.BluePrint.Icons\Fable.BluePrint.Icons.fsproj" />
-  </ItemGroup>
-  <ItemGroup>
-    <Compile Include="Core/Common.fs" />
-    <Compile Include="Core/Icon.fs" />
-    <Compile Include="Core/Breadcrumbs.fs" />
-    <Compile Include="Core/Button.fs" />
-    <Compile Include="Core/ButtonGroup.fs" />
-    <Compile Include="Core/CallOut.fs" />
-    <Compile Include="Core/Card.fs" />
-    <Compile Include="Core/Collapse.fs" />
-    <Compile Include="Core/Divider.fs" />
-    <Compile Include="Core/EditableText.fs" />
-    <Compile Include="Core/HtmlElements.fs" />
-    <Compile Include="Core/HTMLTable.fs" />
-    <Compile Include="Core/HotKeys.fs" />
-    <Compile Include="Core/Menu.fs" />
-    <Compile Include="Core/Navbar.fs" />
-    <Compile Include="Core/NonIdealState.fs" />
-    <Compile Include="Core/OverflowList.fs" />
-    <Compile Include="Core/PanelStack.fs" />
-    <Compile Include="Core/ProgressBar.fs" />
-    <Compile Include="Core/ResizeSensor.fs" />
-    <Compile Include="Core/Spinner.fs" />
-    <Compile Include="Core/Tabs.fs" />
-    <Compile Include="Core/Tag.fs" />
-    <Compile Include="Core/Text.fs" />
-    <Compile Include="Core/Tree.fs" />
-    <Compile Include="FormControl/FormGroup.fs" />
-    <Compile Include="FormControl/ControlGroup.fs" />
-    <Compile Include="FormControl/Label.fs" />
-    <Compile Include="FormControl/Checkbox.fs" />
-    <Compile Include="FormControl/Radio.fs" />
-    <Compile Include="FormControl/HTMLSelect.fs" />
-    <Compile Include="FormControl/Slider.fs" />
-    <Compile Include="FormControl/Switch.fs" />
-    <Compile Include="FormInputs/FileInput.fs" />
-    <Compile Include="FormInputs/NumericInput.fs" />
-    <Compile Include="FormInputs/TagInput.fs" />
-    <Compile Include="FormInputs/TextInputs.fs" />
-    <Content Include="*.fsproj; **/*.fs" />
-  </ItemGroup>
-  <Import Project="..\..\.paket\Paket.Restore.targets" />
+    <PropertyGroup>
+        <Description>Wrapper for BluePrint.Core for Fable Elmish</Description>
+        <PackageProjectUrl>https://github.com/kunjee17/GreenPrint</PackageProjectUrl>
+        <PackageLicenseUrl>https://github.com/kunjee17/GreenPrint/blob/master/LICENSE.md</PackageLicenseUrl>
+        <!-- <PackageIconUrl>https://raw.githubusercontent.com/MangelMaxime/Fulma/master/docs/public/assets/logo-128x128.png</PackageIconUrl> -->
+        <RepositoryUrl>https://github.com/kunjee17/GreenPrint</RepositoryUrl>
+        <PackageTags>fable;elm;fsharp;blueprint;blueprintjs;blueprint.core</PackageTags>
+        <Authors>Kunjan Dalal</Authors>
+        <Version>0.1.7</Version>
+    </PropertyGroup>
+    <PropertyGroup>
+        <TargetFramework>netstandard2.0</TargetFramework>
+        <GenerateDocumentationFile>true</GenerateDocumentationFile>
+    </PropertyGroup>
+    <ItemGroup>
+        <Compile Include="Core/Common.fs" />
+        <Compile Include="Core/Icon.fs" />
+        <Compile Include="Core/Breadcrumbs.fs" />
+        <Compile Include="Core/Button.fs" />
+        <Compile Include="Core/ButtonGroup.fs" />
+        <Compile Include="Core/CallOut.fs" />
+        <Compile Include="Core/Card.fs" />
+        <Compile Include="Core/Collapse.fs" />
+        <Compile Include="Core/Divider.fs" />
+        <Compile Include="Core/EditableText.fs" />
+        <Compile Include="Core/HtmlElements.fs" />
+        <Compile Include="Core/HTMLTable.fs" />
+        <Compile Include="Core/HotKeys.fs" />
+        <Compile Include="Core/Menu.fs" />
+        <Compile Include="Core/Navbar.fs" />
+        <Compile Include="Core/NonIdealState.fs" />
+        <Compile Include="Core/OverflowList.fs" />
+        <Compile Include="Core/PanelStack.fs" />
+        <Compile Include="Core/ProgressBar.fs" />
+        <Compile Include="Core/ResizeSensor.fs" />
+        <Compile Include="Core/Spinner.fs" />
+        <Compile Include="Core/Tabs.fs" />
+        <Compile Include="Core/Tag.fs" />
+        <Compile Include="Core/Text.fs" />
+        <Compile Include="Core/Tree.fs" />
+        <Compile Include="FormControl/FormGroup.fs" />
+        <Compile Include="FormControl/ControlGroup.fs" />
+        <Compile Include="FormControl/Label.fs" />
+        <Compile Include="FormControl/Checkbox.fs" />
+        <Compile Include="FormControl/Radio.fs" />
+        <Compile Include="FormControl/HTMLSelect.fs" />
+        <Compile Include="FormControl/Slider.fs" />
+        <Compile Include="FormControl/Switch.fs" />
+        <Compile Include="FormInputs/FileInput.fs" />
+        <Compile Include="FormInputs/NumericInput.fs" />
+        <Compile Include="FormInputs/TagInput.fs" />
+        <Compile Include="FormInputs/TextInputs.fs" />
+    </ItemGroup>
+    <ItemGroup>
+        <ProjectReference Include="..\Fable.BluePrint.Icons\Fable.BluePrint.Icons.fsproj" />
+    </ItemGroup>
+    <!-- Add source files to "fable" folder in Nuget package -->
+    <ItemGroup>
+        <Content Include="*.fsproj; **\*.fs" PackagePath="fable\" />
+    </ItemGroup>
+    <Import Project="..\..\.paket\Paket.Restore.targets" />
 </Project>
