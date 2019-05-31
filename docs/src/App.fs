@@ -55,15 +55,6 @@ let root model dispatch =
     let pageHtml =
         function
         | Router.Home -> Home.view
-        | Router.Showcase -> Demo.view
-        | Router.Template -> Template.view
-        | Router.BlogIndex ->
-            Widgets.MdViewer.view "blog/index.md"
-        | Router.BlogArticle (Some file) ->
-            div [ Key file ]
-                [ Widgets.MdViewer.view file ]
-        | Router.BlogArticle None ->
-            str "blog index"
         | Router.Fulma fulmaPage ->
             Fulma.Router.view fulmaPage
         | Router.FulmaExtensions fulmaExtensionsPage ->

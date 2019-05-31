@@ -9,19 +9,44 @@ let view =
 
 Here you can find which version of each library is supported by Fulma.
 
-<table class="table" style="width: auto;">
+<table class="bp3-html-table bp3-html-table-bordered bp3-html-table-condensed bp3-html-table-striped" style="width: auto;">
     <thead>
         <tr>
-            <th>Fulma</th>
-            <th>Bulma</th>
-            <th>Font Awesome</th>
+            <th>Module</th>
+            <th>GreenPrint</th>
+            <th>BluePrint</th>
         </tr>
     </thead>
     <tbody>
         <tr>
-            <td>Current</td>
-            <td>0.7.1</td>
-            <td>4.7.0</td>
+            <td>Core</td>
+            <td>0.1.7</td>
+            <td>3.15.1</td>
+        </tr>
+        <tr>
+            <td>Datetime</td>
+            <td>Coming Soon</td>
+            <td>Coming Soon</td>
+        </tr>
+        <tr>
+            <td>Icons</td>
+            <td>0.1.5</td>
+            <td>3.9.0</td>
+        </tr>
+        <tr>
+            <td>Select</td>
+            <td>Coming Soon</td>
+            <td>Coming Soon</td>
+        </tr>
+        <tr>
+            <td>Table</td>
+            <td>Coming Soon</td>
+            <td>Coming Soon</td>
+        </tr>
+        <tr>
+            <td>Timezone</td>
+            <td>Coming Soon</td>
+            <td>Coming Soon</td>
         </tr>
     </tbody>
 <table>

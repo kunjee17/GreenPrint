@@ -74,10 +74,6 @@ type FableFontAwesomePage =
 
 type Page =
     | Home
-    | Showcase
-    | Template
-    | BlogIndex
-    | BlogArticle of string option
     | Fulma of FulmaPage
     | FulmaExtensions of FulmaExtensionsPage
     | FulmaElmish of FulmaElmishPage
@@ -86,11 +82,6 @@ type Page =
 let private toHash page =
     match page with
     | Home -> "#home"
-    | Showcase -> "#showcase"
-    | Template -> "#template"
-    | BlogIndex -> "#blog"
-    | BlogArticle (Some file) -> "#blog-viewer?file=" + file
-    | BlogArticle None -> "#blog-viewer?file="
     | Fulma pageType ->
         match pageType with
         | FulmaPage.Introduction -> "#fulma"
@@ -158,10 +149,6 @@ let private toHash page =
 
 let pageParser : Parser<Page -> Page, Page> =
     oneOf [ map Home (s "home")
-            map Showcase (s "showcase")
-            map Template (s "template")
-            map BlogIndex (s "blog")
-            map BlogArticle ( s "blog-viewer" <?> stringParam "file")
             map (Fulma FulmaPage.Introduction ) (s "fulma")
             map (Fulma FulmaPage.Versions ) (s "fulma" </> s "versions")
             map (Fulma (FulmaPage.Modifier Basics))  (s "fulma" </> s "modifiers" </> s "basics")
