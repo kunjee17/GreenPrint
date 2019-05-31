@@ -31,5 +31,14 @@
         <Compile Include="src/Views/Navbar.fs" />
         <Compile Include="src/App.fs" />
     </ItemGroup>
+
+    <ItemGroup>
+      <ProjectReference Include="..\src\Fable.BluePrint.Core\Fable.BluePrint.Core.fsproj" />
+      <ProjectReference Include="..\src\Fable.BluePrint.Icons\Fable.BluePrint.Icons.fsproj" />
+      <ProjectReference Include="..\src\Fable.BluePrint.DateTime\Fable.BluePrint.DateTime.fsproj" />
+      <ProjectReference Include="..\src\Fable.BluePrint.Select\Fable.BluePrint.Select.fsproj" />
+      <ProjectReference Include="..\src\Fable.BluePrint.Table\Fable.BluePrint.Table.fsproj" />
+      <ProjectReference Include="..\src\Fable.BluePrint.TimeZone\Fable.BluePrint.TimeZone.fsproj" />
+    </ItemGroup>
     <Import Project="..\.paket\Paket.Restore.targets" />
 </Project>
