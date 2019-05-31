@@ -37,7 +37,7 @@ type IBreadcrumbsProps =
 
 [<RequireQualifiedAccess>]
 module Breadcrumbs =
-    let inline Breadcrumb (props : IBreadcrumbProps list)
+    let inline breadcrumb (props : IBreadcrumbProps list)
                (elems : ReactElement list) : ReactElement =
         let props = OptionsStore.Parse(props, fun rslt opt -> match opt with | IBreadcrumbProps.Props p -> rslt.AddProps p | p -> rslt.AddProp p ).ToLowerFirstObj()
         ofImport "Breadcrumb" "@blueprintjs/core" props elems

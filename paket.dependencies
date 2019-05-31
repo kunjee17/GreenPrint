@@ -14,6 +14,7 @@ nuget Fable.React prerelease
 nuget Thoth.Elmish.Toast prerelease
 //Fulma for docs to get it compiled until it is changed
 nuget Fulma prerelease
+nuget Fable.FontAwesome.Free
 nuget Fable.Template.Fulma.Minimal prerelease
 nuget Fulma.Extensions prerelease
 nuget Fulma.Elmish prerelease

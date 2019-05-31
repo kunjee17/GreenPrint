@@ -1,4 +1,4 @@
-module Components.Dropdown
+module Components.Button
 
 open Fable.React
 open Fulma

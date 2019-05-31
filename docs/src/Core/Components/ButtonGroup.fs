@@ -1,4 +1,4 @@
-module Components.Media
+module Components.ButtonGroup
 
 open Fable.React
 open Fable.React.Props
