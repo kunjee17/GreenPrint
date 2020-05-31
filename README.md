@@ -1,3 +1,5 @@
+> This project is no longer maintained.
+
 # GreenPrint : Wrapper around BluePrintjs
 
 [![Gitter](https://badges.gitter.im/gitterHQ/gitter.svg)](https://gitter.im/fable-compiler/Fable)
